@@ -1,8 +1,8 @@
 import javax.swing.*;
-
-public class Menu {
-    public static void main(String[] args) {
-        JFrame f = new JFrame(); // Tao cua so cho app
+ class menu {
+    JFrame f;
+    menu() {
+        f = new JFrame(); // Tao cua so cho app
 
         JButton b1 = new JButton("Analyze a class"); f.add(b1);
         JButton b2 = new JButton("Class"); f.add(b2);
