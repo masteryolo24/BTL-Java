@@ -1,10 +1,18 @@
-import java.io.BufferedReader;
+import       java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
- 
-public class BufferedReaderExample1 {
-	private static final String FILENAME = "New Text Document.txt";
- 
+ /*
+ lz
+ */
+
+ //fskdfdsfk
+ public  class    BufferedReaderExample1{
+	private static final           String FILENAME = "New Text Document.txt";
+
+ public void ditMeMC(){
+
+ }
+
 	public static void main(String[] args) {
 		String s="";
 		BufferedReader br = null;
@@ -19,13 +27,12 @@ public class BufferedReaderExample1 {
 			br = new BufferedReader(new FileReader(FILENAME));
  
 			while ((currentLine = br.readLine()) != null) {
-				currentLine=currentLine.replaceAll("\\s+"," ");
-				currentLine= currentLine.trim();
-				s=s.replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)","");
-				s=s.replaceAll("\\s+"," ");
+				currentLine = currentLine.trim();
+				currentLine = currentLine.replaceAll("\\s+"," ");
 				f.nameClass(currentLine);
-				f.nameMethod(currentLine);
+				//System.out.println(currentLine);
 				s +=currentLine + " ";
+			
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -43,7 +50,7 @@ public class BufferedReaderExample1 {
 			}
 		}
 		//System.out.println(s);
-
+		s=s.replaceAll("\\s+"," ");
 		System.out.println(s);
 	}
 
