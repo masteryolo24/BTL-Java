@@ -7,5 +7,7 @@ public class mainClass {
 	public static void main(String[] args) {
 		readFile r = new readFile();
 		r.docFile("C:\\Users\\7th\\Desktop\\New Text Document.txt");
+		findClass f = new findClass();
+
 	}
 }
