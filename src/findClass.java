@@ -1,37 +1,50 @@
 import java.util.*;
 import java.io.*;
+import java.lang.reflect.*;
+
 class findClass{
-	public void nameClass(String s){
-//		String tmp = new String();
-//		if(s.contains("public ")) {
-//			tmp= s.substring(13);
-//			tmp=tmp.replace("{", "");
-//			System.out.println(tmp);
-//		}
-//		else if(s.contains("class ")){
-//			tmp= s.substring(7);
-//			tmp=tmp.replace("{", "");
-//			System.out.println(tmp);
+    public void nameClass (String s) {
+        int i1 = s.indexOf("class");
+        int i2 = s.indexOf(" ", i1+6);
+        System.out.println("Class's Name: " +s.substring(i1+6, i2));
+    }
+
+
+    public void namePackage(String s) {
+        int i1= s.indexOf("package");
+        if(i1 != -1) {
+            int i2= s.indexOf(";");
+            System.out.println("Package's Name: "+s.substring(i1+8, i2));
+        }
+    }
+
+    public void nameMethod(String s) {
+        String str1 = s;
+        String tmp = new String();
+        if ((str1.contains("public ") || str1.contains("private ") || str1.contains("protected "))  && (str1.endsWith("{") == true || str1.endsWith(")") == true) && !str1.contains("class ")) {
+            str1= str1.replace("public ", "");
+            str1= str1.replace("private ", "");
+            str1= str1.replace("protected ", "");
+            str1= str1.replace("static ", "");
+            str1= str1.replace("{", "");
+            str1 =str1.replace(" (", "(");
+            str1= str1.replace(" args", "");
+            String[] str = str1.split(" ");
+            System.out.println("Method: " +str[1] + ": " + str[0]);
+        }
+    }
+
+//	public void nameMethod(String s) {
+//		int i1 = s.indexOf("{", s.indexOf("{"));
+//		for (int i=i1; i<s.length(); i1++) {
+//
 //		}
 //
-		String tmp = new String();
-		if(s.contains("public class ") || s.contains("class ")) {
-			if(s.contains("public class "))
-				tmp= s.substring(13);
-			else
-				tmp= s.substring(6);
-			tmp=tmp.replace("{", "");
-			System.out.println(tmp);
-		}
+//	}
 
-		public void nameMethod(String s){
-			String[] tmp;
-			int count;
-			if(!s.contains("class") && s.contains("public ")){
-				s= s.replace("public ", "");
-				tmp = s.split("\\s");
-				System.out.println(s[2]);
-			}
-	}
-	}
+    public void nameAttribute(String s) {
+        String str = s;
+        String tmp = new String();
+    }
+
 }
