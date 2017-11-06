@@ -6,7 +6,9 @@ class findClass{
     public void nameClass (String s) {
         int i1 = s.indexOf("class");
         int i2 = s.indexOf(" ", i1+6);
-        System.out.println("Class's Name: " +s.substring(i1+6, i2));
+        String tmp = s.substring(i1+6, i2);
+        tmp = tmp.replace("{", "");
+        System.out.println("Class's Name: " +tmp);
     }
 
 
