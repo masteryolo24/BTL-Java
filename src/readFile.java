@@ -1,9 +1,11 @@
+package BaiTapLon;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class readFile {
-    public void docFile(String FILENAME) {
+    public String docFile(String FILENAME) {
         findClass f2 = new findClass();
         String s = "";
         BufferedReader br = null;
@@ -13,7 +15,6 @@ public class readFile {
 
             fr = new FileReader(FILENAME);
             br = new BufferedReader(fr);
-            findClass f = new findClass();
             String currentLine;
 
             br = new BufferedReader(new FileReader(FILENAME));
@@ -22,6 +23,10 @@ public class readFile {
                 currentLine = currentLine.trim();
                 currentLine = currentLine.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
                 s = s + currentLine + " ";
+                s= s.replace("{", " {");
+                s= s.replace("(", " (");
+                s=s.replace("\"", " \" ");
+                s=s.replace(" ;", ";");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,13 +46,8 @@ public class readFile {
         s = s.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "").trim();
 //        +
 
-
-//        f2.nameClass(s);
-//        f2.namePackage(s);
-//        System.out.println(s);
-       // return f2.nameClass(s) + "\n" + f2.namePackage(s);
-        //System.out.println(s);
-        f2.nameMethod(s);
+        s = f2.deleteString(s);
+        return s;
     }
 
 }
