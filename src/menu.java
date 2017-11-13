@@ -1,6 +1,7 @@
 import javafx.embed.swing.JFXPanel;
 import javax.sound.sampled.Line;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -35,7 +36,9 @@ public class menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Read file
                 JFileChooser chooser= new JFileChooser();
+                chooser.addChoosableFileFilter(new FileNameExtensionFilter("Java files", "java"));
                 chooser.showOpenDialog(null);
+
                 File f = chooser.getSelectedFile();
                 String filename = f.getAbsolutePath();
                 tf1.setText(filename);
@@ -57,6 +60,4 @@ public class menu extends JFrame {
         setVisible(true);
 
     }
-
-
 }
