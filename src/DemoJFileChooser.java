@@ -22,7 +22,7 @@ public class DemoJFileChooser extends JPanel
         chooser = new JFileChooser();
         chooser.setCurrentDirectory(new java.io.File("."));
         chooser.setDialogTitle(choosertitle);
-        chooser.addChoosableFileFilter(new FileNameExtensionFilter("Java files", "java"));
+//        chooser.addChoosableFileFilter(new FileNameExtensionFilter("Java files", "java"));
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         //
         // disable the "All files" option.
