@@ -23,10 +23,6 @@ public class readFile {
                 currentLine = currentLine.trim();
                 currentLine = currentLine.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
                 s = s + currentLine + " ";
-                s= s.replace("{", " {");
-                s= s.replace("(", " (");
-                s=s.replace("\"", " \" ");
-                s=s.replace(" ;", ";");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -44,8 +40,7 @@ public class readFile {
             }
         }
         s = s.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "").trim();
-//        +
-
+        s= s.replace("{", " {").replace("(", " (").replace(") ", ")").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=");
         s = f2.deleteString(s);
         return s;
     }
