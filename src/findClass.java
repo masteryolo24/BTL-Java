@@ -107,6 +107,7 @@ class findClass{
 	
 	public void nameAttribute(String s) {
 		String s1 = new String();
+		String name;
 		s1=s;
 		int i = s.indexOf("import");
 		while(i!=-1) {
@@ -130,9 +131,18 @@ class findClass{
 		findClass f= new findClass();
 		int i2 = s2.indexOf(";");
 		while (i2!=-1) {
-			int i3 = s2.lastIndexOf(" " , s2.lastIndexOf(" ", i2)-1);
-			System.out.println("Attribute's Name: " + s2.substring(i3+1, i2));
-			String[] tmp = s2.substring(i3+1, i2).split(" ");
+			if(s2.charAt(i2-1) == ')') {
+				int k = s2.lastIndexOf("=", i2);
+				int k2 = s2.lastIndexOf(" ", s2.lastIndexOf(" ", k)-1);
+				name = s2.substring(k2+1, k);
+			}
+			else {
+				int i3 = s2.lastIndexOf(" " , s2.lastIndexOf(" ", i2)-1);
+				name = s2.substring(i3+1, i2);
+			}
+			
+			System.out.println("Attribute's Name: " + name);
+			String[] tmp = name.split(" ");
 			if(f.getNameClass(s).contains(tmp[0])) {
 				int k1 = s2.lastIndexOf("class", s2.lastIndexOf(tmp[0], i2));
 				int k2 = s2.indexOf(" " , s2.indexOf(" " ,k1+6));
