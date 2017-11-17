@@ -10,12 +10,9 @@ public class menu extends JFrame {
     JButton b1 = new JButton("Java File");
     JButton b2 = new JButton("Java Project Folder");
     JButton b3 = new JButton("Analyze");
-
     JTextField tf1 = new JTextField("");
 
-
     public menu() {
-        // Size and name of main Jframe
         super("Java SE Project Reader");
         setSize(350, 200);
 
@@ -35,10 +32,11 @@ public class menu extends JFrame {
         b3.setMnemonic(KeyEvent.VK_A);
         b3.setToolTipText("Click to start analyze");
 
-        //File path
+        // File path
         tf1.setBounds(30, 50,200,30);
         tf1.setToolTipText("Write file directory here");
-        //File Chooser
+
+        // File Chooser
         b1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,7 +52,6 @@ public class menu extends JFrame {
                 tf1.setText(filename);
             }
         });
-
         b2.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
@@ -65,10 +62,11 @@ public class menu extends JFrame {
                  File f = chooser.getSelectedFile();
                  String filename = f.getAbsolutePath();
                  tf1.setText(filename);
+                 diagramPanel dp = new diagramPanel();
              }
         });
 
-        // Add buttons and things to panel
+        // Add to panel
         p.setLayout(null);
         p.add(b1);
         p.add(b2);
@@ -76,7 +74,7 @@ public class menu extends JFrame {
         p.add(tf1);
         add(p);
 
-        // Init main Jframe
+        // Init JFrame
         setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
