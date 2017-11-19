@@ -42,28 +42,39 @@ public class menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Read java file
                 JFileChooser chooser= new JFileChooser();
-//                chooser.addChoosableFileFilter(new FileNameExtensionFilter("Java files", "java"));
                 FileNameExtensionFilter filter = new FileNameExtensionFilter("Java file", "java");
                 chooser.setFileFilter(filter);
-                chooser.showOpenDialog(null);
-
-                File f = chooser.getSelectedFile();
-                String filename = f.getAbsolutePath();
-                tf1.setText(filename);
+                int result = chooser.showOpenDialog(null);
+                if(result == JFileChooser.APPROVE_OPTION) {
+                    File f = chooser.getSelectedFile();
+                    String filename = f.getAbsolutePath();
+                    tf1.setText(filename);
+                } else if( result == JFileChooser.CANCEL_OPTION) {
+                    tf1.setText("Cancel choose Java file");
+                }
             }
         });
         b2.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
+                 // Read Java SE folder
                  JFileChooser chooser= new JFileChooser();
                  chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                 chooser.showOpenDialog(null);
-
-                 File f = chooser.getSelectedFile();
-                 String filename = f.getAbsolutePath();
-                 tf1.setText(filename);
-                 diagramPanel dp = new diagramPanel();
+                 int result = chooser.showOpenDialog(null);
+                 if(result == JFileChooser.APPROVE_OPTION) {
+                     File f = chooser.getSelectedFile();
+                     String filename = f.getAbsolutePath();
+                     tf1.setText(filename);
+                 } else if( result == JFileChooser.CANCEL_OPTION) {
+                     tf1.setText("Cancel choose folder");
+                 }
              }
+        });
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                diagramPanel dp = new diagramPanel();
+            }
         });
 
         // Add to panel
@@ -79,6 +90,5 @@ public class menu extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-
     }
 }
