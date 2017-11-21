@@ -12,6 +12,8 @@ public class menu extends JFrame {
     JButton b3 = new JButton("Analyze");
     JTextField tf1 = new JTextField("");
 
+
+
     public menu() {
         super("Java SE Project Reader");
         setSize(350, 200);
@@ -73,7 +75,10 @@ public class menu extends JFrame {
         b3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Analyze
                 diagramPanel dp = new diagramPanel();
+                if(bolDir())
+                    dp.setVisible(true);
             }
         });
 
@@ -90,5 +95,12 @@ public class menu extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
+    }
+
+    protected boolean bolDir() {
+        if(tf1.getText().equals("Cancel choose Java file") || tf1.getText().equals("Cancel choose folder") || tf1.getText().equals(""))
+            return false;
+        else
+            return true;
     }
 }

@@ -1,23 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 
 public class diagramPanel extends JFrame {
-    JPanel p = new JPanel();
+    JPanel p1 = new JPanel();
+    JPanel p2 = new JPanel();
     JToolBar tb = new JToolBar();
     JButton b1 = new JButton("");
     JButton b2 = new JButton("");
     JButton b3 = new JButton("");
+    JTextField tf1 = new JTextField("");
 
-//    JToolBar1 = new javax.swing.JToolBar();
-//    jToolBar1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-//    jToolBar1.setFloatable(false);
-//    jToolBar1.setRollover(true);
     public diagramPanel() {
         // Size and name of JFrame
         super("Java SE Project Reader");
         setSize(1280, 720);
+        setLayout(new FlowLayout());
 
         // Buttons
         b1.setFocusPainted(false);
@@ -44,17 +42,28 @@ public class diagramPanel extends JFrame {
         tb.add(b2);
         tb.add(Box.createHorizontalStrut(40));
         tb.add(b3);
+
+        tf1.setBounds(100, 100,200,50);
+        tf1.setToolTipText("Write file directory here");
 //        tb.setOpaque(true);
 
-        // Add to panel
-        getContentPane().add("North", tb);
-        p.add(tb);
-        add(p);
+//        getContentPane().add("North", tb);
+        // Add to panel 1
+        p1.add(tb);
+        p1.setPreferredSize(new Dimension(1280, 55));
+
+        // Add to panel 2
+        p2.add(tf1);
+        p2.setBackground(Color.BLUE);
+        p2.setPreferredSize(new Dimension(1280, 665));
+
+        // Add to frame
+        add(p1);
+        add(p2);
 
         // Init JFrame
         setResizable(false);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
+        setVisible(false);
     }
 }
