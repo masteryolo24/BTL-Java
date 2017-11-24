@@ -1,6 +1,12 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class diagramPanel extends JFrame {
     JPanel p1 = new JPanel();
@@ -36,6 +42,22 @@ public class diagramPanel extends JFrame {
         tb.setFloatable(false);
         tb.setRollover(true);
 
+
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                BufferedImage image = new BufferedImage(p2.getWidth(), p2.getHeight(), BufferedImage.TYPE_INT_RGB);
+                Graphics2D g = image.createGraphics();
+                p2.printAll(g);
+                g.dispose();
+                try {
+                    ImageIO.write(image, "jpg", new File("Paint.jpg"));
+                    ImageIO.write(image, "png", new File("Paint.png"));
+                } catch (IOException exp) {
+                    exp.printStackTrace();
+                }
+            }
+        });
         // Add to toolbar
         tb.add(b1);
         tb.add(Box.createHorizontalStrut(40));
@@ -54,7 +76,7 @@ public class diagramPanel extends JFrame {
 
         // Add to panel 2
         p2.add(tf1);
-        p2.setBackground(Color.BLUE);
+        p2.setBackground(Color.cyan);
         p2.setPreferredSize(new Dimension(1280, 665));
 
         // Add to frame
