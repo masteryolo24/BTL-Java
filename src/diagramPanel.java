@@ -51,11 +51,14 @@ public class diagramPanel extends JFrame {
                 p2.printAll(g);
                 g.dispose();
                 try {
-                    ImageIO.write(image, "jpg", new File("Paint.jpg"));
-                    ImageIO.write(image, "png", new File("Paint.png"));
+                    ImageIO.write(image, "jpg", new File("Diagram.jpg"));
+                    ImageIO.write(image, "png", new File("Diagram.png"));
                 } catch (IOException exp) {
                     exp.printStackTrace();
+                } finally {
+                    JOptionPane.showMessageDialog(null,"Your image will be stored as 'Diagram.jpg' and 'Diagram.png'","Message", JOptionPane.INFORMATION_MESSAGE,new ImageIcon("./icons/ok.png"));
                 }
+
             }
         });
         // Add to toolbar
