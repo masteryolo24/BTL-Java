@@ -15,7 +15,6 @@ public class diagramPanel extends JFrame {
     JButton b1 = new JButton("");
     JButton b2 = new JButton("");
     JButton b3 = new JButton("");
-    JTextField tf1 = new JTextField("");
 
     public diagramPanel() {
         // Size and name of JFrame
@@ -68,18 +67,11 @@ public class diagramPanel extends JFrame {
         tb.add(Box.createHorizontalStrut(40));
         tb.add(b3);
 
-        tf1.setBounds(100, 100,200,50);
-        tf1.setToolTipText("Write file directory here");
-//        tb.setOpaque(true);
-
-//        getContentPane().add("North", tb);
         // Add to panel 1
         p1.add(tb);
         p1.setPreferredSize(new Dimension(1280, 55));
 
         // Add to panel 2
-        p2.add(tf1);
-        p2.setBackground(Color.cyan);
         p2.setPreferredSize(new Dimension(1280, 665));
 
         // Add to frame
