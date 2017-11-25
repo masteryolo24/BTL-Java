@@ -7,10 +7,10 @@ import java.io.File;
 
 public class menu extends JFrame {
     JPanel p = new JPanel();
-    JButton b1 = new JButton("Java File");
-    JButton b2 = new JButton("Java Project Folder");
-    JButton b3 = new JButton("Analyze");
-    JTextField tf1 = new JTextField("");
+    JButton fileButton = new JButton("Java File");
+    JButton folderButton = new JButton("Java Project Folder");
+    JButton analyzeButton = new JButton("Analyze");
+    JTextField filePath = new JTextField("");
 
 
 
@@ -19,27 +19,27 @@ public class menu extends JFrame {
         setSize(350, 200);
 
         // Buttons
-        b1.setBounds(45, 105, 85, 30);
-        b1.setFocusPainted(false);
-        b1.setMnemonic(KeyEvent.VK_J);
-        b1.setToolTipText("Click to choose Java file");
+        fileButton.setBounds(45, 105, 85, 30);
+        fileButton.setFocusPainted(false);
+        fileButton.setMnemonic(KeyEvent.VK_J);
+        fileButton.setToolTipText("Click to choose Java file");
 
-        b2.setBounds(155, 105, 150, 30);
-        b2.setFocusPainted(false);
-        b2.setMnemonic(KeyEvent.VK_F);
-        b2.setToolTipText("Click to choose Java folder");
+        folderButton.setBounds(155, 105, 150, 30);
+        folderButton.setFocusPainted(false);
+        folderButton.setMnemonic(KeyEvent.VK_F);
+        folderButton.setToolTipText("Click to choose Java folder");
 
-        b3.setBounds(240, 50, 80, 30);
-        b3.setFocusPainted(false);
-        b3.setMnemonic(KeyEvent.VK_A);
-        b3.setToolTipText("Click to start analyze");
+        analyzeButton.setBounds(240, 50, 80, 30);
+        analyzeButton.setFocusPainted(false);
+        analyzeButton.setMnemonic(KeyEvent.VK_A);
+        analyzeButton.setToolTipText("Click to start analyze");
 
         // File path
-        tf1.setBounds(30, 50,200,30);
-        tf1.setToolTipText("Write file directory here");
+        filePath.setBounds(30, 50,200,30);
+        filePath.setToolTipText("Write file directory here");
 
         // File Chooser
-        b1.addActionListener(new ActionListener() {
+        fileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Read java file
@@ -50,13 +50,13 @@ public class menu extends JFrame {
                 if(result == JFileChooser.APPROVE_OPTION) {
                     File f = chooser.getSelectedFile();
                     String filename = f.getAbsolutePath();
-                    tf1.setText(filename);
+                    filePath.setText(filename);
                 } else if( result == JFileChooser.CANCEL_OPTION) {
-                    tf1.setText("Cancel choose Java file");
+                    filePath.setText("Cancel choose Java file");
                 }
             }
         });
-        b2.addActionListener(new ActionListener() {
+        folderButton.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
                  // Read Java SE folder
@@ -66,17 +66,17 @@ public class menu extends JFrame {
                  if(result == JFileChooser.APPROVE_OPTION) {
                      File f = chooser.getSelectedFile();
                      String filename = f.getAbsolutePath();
-                     tf1.setText(filename);
+                     filePath.setText(filename);
                  } else if( result == JFileChooser.CANCEL_OPTION) {
-                     tf1.setText("Cancel choose folder");
+                     filePath.setText("Cancel choose folder");
                  }
              }
         });
-        b3.addActionListener(new ActionListener() {
+        analyzeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Analyze
-                diagramPanel dp = new diagramPanel();
+                diagramFrame dp = new diagramFrame();
                 if(bolDir())
                     dp.setVisible(true);
             }
@@ -84,10 +84,10 @@ public class menu extends JFrame {
 
         // Add to panel
         p.setLayout(null);
-        p.add(b1);
-        p.add(b2);
-        p.add(b3);
-        p.add(tf1);
+        p.add(fileButton);
+        p.add(folderButton);
+        p.add(analyzeButton);
+        p.add(filePath);
         add(p);
 
         // Init JFrame
@@ -98,7 +98,7 @@ public class menu extends JFrame {
     }
 
     protected boolean bolDir() {
-        if(tf1.getText().equals("Cancel choose Java file") || tf1.getText().equals("Cancel choose folder") || tf1.getText().equals(""))
+        if(filePath.getText().equals("Cancel choose Java file") || filePath.getText().equals("Cancel choose folder") || filePath.getText().equals(""))
             return false;
         else
             return true;
