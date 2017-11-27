@@ -3,8 +3,9 @@ import java.awt.*;
 
 public class diagramPanel extends JPanel {
     public diagramPanel() {
-        repaint();
+//        repaint();
     }
+
 
     public void paint(Graphics g) {
 //        g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
@@ -16,14 +17,21 @@ public class diagramPanel extends JPanel {
 
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.translate(640, 332.5);
+//        g2.translate(0, 0);
+        // Background
+        g.setColor(Color.WHITE);
+        g.fillRect(0,0,1280,720);
+//        g2.translate(640, 332.5);
 //        g2.rotate(30.0 * Math.PI / 180.0);
+//        g2.scale(0.5, 0.5);
+//        g2.translate(-640, -332.5);
 
-        g2.scale(2, 2);
+        g.setColor(Color.BLACK);
         g.drawRect(c, d, a, b);
-        g.drawString("Hi", (a + c) / 2, (b + d) / 2);
+        g.drawString("Hello", (a + c) / 2, (b + d) / 2);
         g.drawLine(c, (b + d) / 2 + 10 , a+10, (b + d) / 2 + 10);
-        g.setColor(Color.red);
 
+        repaint();
     }
+
 }
