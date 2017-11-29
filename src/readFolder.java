@@ -1,4 +1,4 @@
-package BaiTapLon;
+//package BaiTapLon;
 
 import java.io.File;
 
@@ -10,7 +10,8 @@ public class readFolder {
 	        if (fileEntry.isDirectory()) {
 	            listFilesForFolder(fileEntry);
 	        } else {
-	        	s += r.docFile("C:\\Users\\DELL\\Desktop\\New folder\\Source Code\\" + fileEntry.getName()) + " ";
+	        	//path dan ra file source code
+	        	s += r.docFile("C:\\Users\\7th\\Desktop\\New folder\\" + fileEntry.getName()) + " ";
 	        }
 	    }
 	    return s;

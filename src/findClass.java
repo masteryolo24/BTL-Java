@@ -1,5 +1,3 @@
-package BaiTapLon;
-
 import java.util.*;
 
 class findClass{

@@ -15,13 +15,19 @@ public class diagramFrame extends JFrame {
     public diagramFrame() {
         // Size and name of JFrame
         super("Java SE Project Reader");
-        setSize(1280, 720);
+//        setSize(1280, 720);
         setLayout(new BorderLayout());
+        setSize(300, 400);
 
         // Scrollpane
 //        JScrollPane scrollPane = new JScrollPane(diagram, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 //        diagram.add(scrollPane, BorderLayout.CENTER);
-
+        JScrollPane scrollPane = new JScrollPane(diagram);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+//        scrollPane.setPreferredSize(new Dimension(100, 200));
+        add(scrollPane, BorderLayout.CENTER);
+        setPreferredSize(new Dimension(400, 500));
 
         // Add to diagram
         diagram.addKeyListener(new MyKeyListener());

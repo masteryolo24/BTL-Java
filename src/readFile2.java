@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class readFile {
+public class readFile2 {
     public String docFile(String FILENAME) {
         findClass f2 = new findClass();
         String s = "";
@@ -42,8 +42,8 @@ public class readFile {
         s = s.replace("{", " {").replace("(", " (").replace(") ", ")").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=").replaceAll(";", " ;");
         s = s.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "").trim();
         //s = f2.deleteString3(s);
-       // s = f2.deleteString4(s);
-       
+        // s = f2.deleteString4(s);
+
         return s;
     }
 

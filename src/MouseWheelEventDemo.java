@@ -102,8 +102,8 @@ public class MouseWheelEventDemo extends JPanel
         textArea = new JTextArea();
         textArea.setEditable(false);
         scrollPane = new JScrollPane(textArea);
-        scrollPane.setVerticalScrollBarPolicy(
-                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setPreferredSize(new Dimension(400, 250));
         add(scrollPane, BorderLayout.CENTER);
         textArea.append("This text area displays information "

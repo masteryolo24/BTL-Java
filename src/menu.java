@@ -38,8 +38,6 @@ public class menu extends JFrame {
         analyzeButton.setMnemonic(KeyEvent.VK_A);
         analyzeButton.setToolTipText("Click to start analyze");
 
-
-
         // File path
         filePath.setBounds(30, 50,240,30);
         filePath.setToolTipText("Write file directory here");
@@ -66,6 +64,8 @@ public class menu extends JFrame {
                     String filename = f.getAbsolutePath();
                     filePath.setText(filename);
                 } else if( result == JFileChooser.CANCEL_OPTION) {
+                    //trong doan duoi la 1 duong dan dung khong
+
                     filePath.setText("Cancel choose Java file");
                 }
             }
@@ -90,6 +90,7 @@ public class menu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Analyze
+
                 diagramFrame dp = new diagramFrame();
                 if(bolDir())
                     dp.setVisible(true);

@@ -14,7 +14,6 @@ public class diagramPanel extends JPanel {
         int c = 10;
         int d = 15;
 
-
         Graphics2D g2 = (Graphics2D) g;
 
 //        g2.translate(0, 0);

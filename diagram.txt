@@ -1,0 +1,24 @@
+Abstract Class
++Name: mainClass3
+Class
++Name: mainClass2
+mainClass2 is a mainClass
++d: mainClass
+mainClass2 has a mainClass
+Class
++Name: mainClass4
+mainClass4 is a mainClass3
++print (): void
++s: String
+Class
++Name: mainClass6
+mainClass7
+mainClass8
+Class
++Name: mainClass
++main (String[] args): void
++deleteString3 (String s): String
+Interface
++Name: mainClass7
+Interface
++Name: mainClass8
