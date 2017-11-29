@@ -28,7 +28,7 @@ public class diagramPanel extends JPanel {
 
         g.setColor(Color.BLACK);
         g.drawRect(c, d, a, b);
-        g.drawString("Hello", (a + c) / 2, (b + d) / 2);
+        g.drawString("Hello\n", (a + c) / 2, (b + d) / 2);
         g.drawLine(c, (b + d) / 2 + 10 , a+10, (b + d) / 2 + 10);
 
         repaint();

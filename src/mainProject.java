@@ -3,12 +3,14 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
-public class mainProject {
-	public static void main(String[] args) throws FileNotFoundException {
-		final String path = "C:\\Users\\7th\\Desktop\\New folder";
+class mainProject {
+	public void printOutput(String path) throws FileNotFoundException {
+		readFile2 r = new readFile2();
+		//System.out.println(r.docFile(".\\diagram.txt"));
+		//final String path = "C:\\Users\\7th\\Desktop\\New folder";
 		mainClass m = new mainClass();
 		//path dan ra file source code
-		m.readAllClass(path);
+		//m.readAllClass(path);
 		//path dan ra file output
 		File file = new File(".\\diagram.txt");
 		FileOutputStream fos = new FileOutputStream(file);

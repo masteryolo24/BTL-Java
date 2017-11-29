@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class menu extends JFrame {
     JPanel p = new JPanel();
@@ -90,7 +91,12 @@ public class menu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Analyze
-
+                mainProject m = new mainProject();
+                try {
+                    m.printOutput(filePath.getText());
+                } catch (FileNotFoundException e1) {
+                    e1.printStackTrace();
+                }
                 diagramFrame dp = new diagramFrame();
                 if(bolDir())
                     dp.setVisible(true);

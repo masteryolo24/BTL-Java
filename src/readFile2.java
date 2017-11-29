@@ -4,7 +4,6 @@ import java.io.IOException;
 
 public class readFile2 {
     public String docFile(String FILENAME) {
-        findClass f2 = new findClass();
         String s = "";
         BufferedReader br = null;
         FileReader fr = null;
@@ -19,9 +18,7 @@ public class readFile2 {
 
             while ((currentLine = br.readLine()) != null) {
                 //bo 2 dong dau tien
-                currentLine = currentLine.trim();
-                currentLine = currentLine.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
-                s = s + currentLine + " ";
+                s += currentLine + "\n";
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,9 +35,6 @@ public class readFile2 {
                 ex.printStackTrace();
             }
         }
-        s = f2.deleteString(s);
-        s = s.replace("{", " {").replace("(", " (").replace(") ", ")").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=").replaceAll(";", " ;");
-        s = s.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "").trim();
         //s = f2.deleteString3(s);
         // s = f2.deleteString4(s);
 
