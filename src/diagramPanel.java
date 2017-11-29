@@ -6,7 +6,7 @@ public class diagramPanel extends JPanel {
 //        repaint();
     }
 
-
+    @Override
     public void paint(Graphics g) {
 //        g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
         int a = 90;
@@ -19,8 +19,9 @@ public class diagramPanel extends JPanel {
 
 //        g2.translate(0, 0);
         // Background
-        g.setColor(Color.WHITE);
+        g.setColor(new Color(238,238,238));
         g.fillRect(0,0,1280,720);
+
 //        g2.translate(640, 332.5);
 //        g2.rotate(30.0 * Math.PI / 180.0);
 //        g2.scale(0.5, 0.5);

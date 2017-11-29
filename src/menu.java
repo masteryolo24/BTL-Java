@@ -10,35 +10,49 @@ public class menu extends JFrame {
     JButton fileButton = new JButton("Java File");
     JButton folderButton = new JButton("Java Project Folder");
     JButton analyzeButton = new JButton("Analyze");
+    JButton tutorial = new JButton("Tutorial");
     JTextField filePath = new JTextField("");
-
-
 
     public menu() {
         super("Java SE Project Reader");
-        setSize(350, 200);
+        setSize(400, 200);
 
         // Buttons
-        fileButton.setBounds(45, 105, 85, 30);
+        fileButton.setBounds(20, 105, 85, 30);
         fileButton.setFocusPainted(false);
         fileButton.setMnemonic(KeyEvent.VK_J);
         fileButton.setToolTipText("Click to choose Java file");
 
-        folderButton.setBounds(155, 105, 150, 30);
+        folderButton.setBounds(125, 105, 145, 30);
         folderButton.setFocusPainted(false);
         folderButton.setMnemonic(KeyEvent.VK_F);
         folderButton.setToolTipText("Click to choose Java folder");
 
-        analyzeButton.setBounds(240, 50, 80, 30);
+        tutorial.setBounds(290, 105, 80, 30);
+        tutorial.setFocusPainted(false);
+        tutorial.setMnemonic(KeyEvent.VK_T);
+        tutorial.setToolTipText("Tutorial");
+
+        analyzeButton.setBounds(295, 50, 80, 30);
         analyzeButton.setFocusPainted(false);
         analyzeButton.setMnemonic(KeyEvent.VK_A);
         analyzeButton.setToolTipText("Click to start analyze");
 
+
+
         // File path
-        filePath.setBounds(30, 50,200,30);
+        filePath.setBounds(30, 50,240,30);
         filePath.setToolTipText("Write file directory here");
 
         // File Chooser
+        tutorial.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,
+                        "Press PrtSc to export images\nPress + to zoom in\nPress - to zoom out",
+                        "Message", JOptionPane.INFORMATION_MESSAGE,new ImageIcon("./icons/ok.png"));
+            }
+        });
         fileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,6 +101,7 @@ public class menu extends JFrame {
         p.add(fileButton);
         p.add(folderButton);
         p.add(analyzeButton);
+        p.add(tutorial);
         p.add(filePath);
         add(p);
 
