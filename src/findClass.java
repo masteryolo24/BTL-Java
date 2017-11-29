@@ -2,37 +2,151 @@ package BaiTapLon;
 
 import java.util.*;
 
-import com.sun.xml.internal.ws.encoding.SwACodec;
-
 class findClass{
     public void nameClass (String s) {
-    	System.out.println("Class's Names: ");
-        int i1 = s.indexOf("class");
+    	int count =0, tmp3;
+    	String str;
+    	findClass f = new findClass();
+    	//System.out.println("Class: ");
+        int i1 = s.indexOf(" class ");
+        //int i2;
         for (int i=i1; i< s.length(); i++) {
+        	int temp = s.lastIndexOf(" ", i-1);
         	if (i ==-1) break;
-        	int i2 = s.indexOf(" ", i+6);
-        	String tmp = s.substring(i +6,  i2).replace("{", "");
-        	i = s.indexOf("class", i+1) -1;
-        	System.out.println(tmp);
+        	int i2 = s.indexOf(" ", i+7);
+        	String tmp = s.substring(i +7,  i2);
+        	String tmp2 = s.substring(temp+1, i);
+        	if (tmp2.equals("abstract")) System.out.println("Abstract Class");
+        	else System.out.println("Class");
+        	System.out.println("+Name: " + tmp);
+        	int k1 = s.indexOf("{", i);
+        	for (int j=k1; j <s.length(); j++){
+    			if(j ==-1) break;
+    			if(count==0) {
+    			}
+    			if(s.charAt(j) == '{') {
+                    count++;
+                }
+    			if(s.charAt(j) == '}') {
+    		        count--;
+    		        if(count ==0) {
+    		            tmp3=j;	      
+    		            j = s.indexOf("{", tmp3)-1;
+                        str = s.substring(i, tmp3-1);      
+                        
+                        if(str.indexOf(" extends ") !=-1) {
+                        	System.out.println(tmp + " is a " + f.getExtend(str));
+                        }
+                        f.nameMethod(str);
+                        if (!tmp2.equals("abstract")) {
+                        	f.nameAttribute(str, s);
+                        }
+                        if (f.hasImplement(str)) {
+                        for (int x= 0; x<f.getImplement(str).length; x++) {
+                        	System.out.println(f.getImplement(str)[x].trim());
+                        }
+                        }
+                        break;
+                    }
+                }
+            }
+        	i = s.indexOf(" class ", i+1) -1;
+        	
         }
     }
-
+    
+    public void nameInterface (String s) {
+    	int count =0, tmp3;
+    	String str;
+    	findClass f = new findClass();
+    	//System.out.println("Class: ");
+        int i1 = s.indexOf(" interface ");
+        //int i2;
+        for (int i=i1; i< s.length(); i++) {
+        	if (i ==-1) break;
+        	int i2 = s.indexOf(" ", i+11);
+        	String tmp = s.substring(i +11,  i2);
+        	System.out.println("Interface");
+        	System.out.println("+Name: " + tmp);
+        	int k1 = s.indexOf("{", i);
+        	for (int j=k1; j <s.length(); j++){
+    			if(j ==-1) break;
+    			if(count==0) {
+    			}
+    			if(s.charAt(j) == '{') {
+                    count++;
+                }
+    			if(s.charAt(j) == '}') {
+    		        count--;
+    		        if(count ==0) {
+    		            tmp3=j;	      
+    		            j = s.indexOf("{", tmp3)-1;
+                        str = s.substring(i, tmp3-1);      
+//                        f.nameMethod(str);
+//                        f.nameAttribute(str, s);
+//                        if(str.indexOf(" extends ") !=-1) {
+//                        	System.out.println(tmp + " is a " + f.getExtend(str));
+//                        }
+                        break;
+                    }
+                }
+            }
+        	i = s.indexOf(" interface ", i+1) -1;
+        }
+    }
+    
+    public String deleteString3 (String s) {
+    	int i2;
+    	String s1 = s;
+    	String tmp;
+    	int i = s.indexOf("\"");
+    	while (i!=-1) {
+    		i2 = s.indexOf("\"", i+1);
+    		if(s.charAt(i2-1) == '\\') {
+    			i2 = s.indexOf("\"", i2+1);
+    		}
+    		
+    		tmp = s.substring(i, i2+1);
+        	s1=s1.replaceFirst(tmp, " ");
+        	i = s.indexOf("\"", i2+1);
+    		
+    	}
+    	return s1;
+    }
+    
+//    public String deleteString4(String s){
+//    	int i2;
+//    	String s1 = s;
+//    	String tmp;
+//    	int i = s.indexOf("\'");
+//    	while (i!=-1) {
+//    		i2 = s.indexOf("\'", i+1);
+//    		if(s.charAt(i2-1) == '\\') {
+//    			i2 = s.indexOf("\'", i2+1);
+//    		}
+//    		tmp = s.substring(i, i2+1);
+//    		s1=s1.replaceFirst(tmp, " ");
+//    		i = s.indexOf("\'", i2+1);
+//    	}
+//    	return s1;
+//    }
+    
     public String getSimpleNameClass(String s) {
-    	int i1 = s.indexOf("class");
-        int i2 = s.indexOf(" ", i1+6);
-        String tmp = s.substring(i1 +6,  i2).replace("{", "");
+    	int i1 = s.indexOf(" class ");
+        int i2 = s.indexOf(" ", i1+7);
+        String tmp = s.substring(i1 +7,  i2).replace("{", "");
         return tmp;
     }
     
     public Vector<String> getNameClass(String s) {
     	Vector<String> v = new Vector<String>(10,2);
-    	int i1 = s.indexOf("class");
+    	int i1 = s.indexOf(" class ");
         for (int i=i1; i< s.length(); i++) {
         	int j =0;
         	if (i ==-1) break;
-        	int i2 = s.indexOf(" ", i+6);
-        	String tmp = s.substring(i +6,  i2).replace("{", "");
-        	i = s.indexOf("class", i+1) -1;
+        	int i2 = s.indexOf(" ", i+7);
+        	String tmp = s.substring(i +7,  i2).replace("{", "");
+        	i = s.indexOf(" class ", i+1) -1;
         	v.add(j, tmp);
         	j++;
         }
@@ -40,41 +154,14 @@ class findClass{
     }
 
     public String namePackage(String s) {
-        int i3= s.indexOf("package");
+        int i3= s.indexOf(" package ");
         String s2 = new String();
         if(i3 != -1) {
             int i4= s.indexOf(";");
-            s2 = "Package's Name: "+s.substring(i3+8, i4);
+            s2 = "Package's Name: "+s.substring(i3+9, i4);
         }
         return s2;
     }
-
-    public String deleteString2(String s) {
-		String s1= s;
-		int i1 = s.indexOf("{");
-		int tmp = 0, tmp2;
-		int count =0;
-		String str;
-		for (int i=i1; i <s.length(); i++){
-			if(i ==-1) break;
-			if(count==0) {
-				tmp = i;
-			}
-			if(s.charAt(i) == '{') {
-                count++;
-            }
-			if(s.charAt(i) == '}') {
-		        count--;
-		        if(count ==0) {
-		            tmp2=i;	      
-		            i = s.indexOf("{", tmp2)-1;
-                    str = s.substring(tmp+1, tmp2-1);
-                    s1= s1.replace(str, "");
-                }
-            }
-        }
-		return s1;
-	}
     
 	public String deleteString(String s) {
 		findClass f = new findClass();
@@ -105,63 +192,136 @@ class findClass{
 	}
 	
 	
-	public void nameAttribute(String s) {
-		String s1 = new String();
+	   public String deleteString2(String s) {
+			String s1= s;
+			int i1 = s.indexOf("{");
+			int tmp = 0, tmp2;
+			int count =0;
+			String str;
+			for (int i=i1; i <s.length(); i++){
+				if(i ==-1) break;
+				if(count==0) {
+					tmp = i;
+				}
+				if(s.charAt(i) == '{') {
+	                count++;
+	            }
+				if(s.charAt(i) == '}') {
+			        count--;
+			        if(count ==0) {
+			            tmp2=i;	      
+			            i = s.indexOf("{", tmp2)-1;
+	                    str = s.substring(tmp+1, tmp2-1);
+	                    s1= s1.replace(str, "");
+	                }
+	            }
+	        }
+			return s1;
+		}
+	
+//	   public String deleteString3 (String s) {
+//		   String s1=s;
+//		   //int j = s.indexOf('\"');
+//		   for (int i= s.indexOf("\""); i<s.length(); i++) {
+//			   if(i==-1)break;
+//			   if (s.charAt(i) == '\"') {
+//				   s1= s.replaceFirst(s.substring(i, s.indexOf("\"", i+1)), "");
+//				   i = s.indexOf('\"', i);
+//			   }
+//			   
+//		   }
+//		   return s1;
+//	   }
+	   
+	   
+	   
+    public void nameAttribute(String s, String s1) {
 		String name;
-		s1=s;
-		int i = s.indexOf("import");
-		while(i!=-1) {
-			int j = s.indexOf(";", i);
-			s1 = s1.replaceAll(s.substring(i, j+1), "");
-			i = s.indexOf("import", j);
-		}
-		
-		String s2 = new String();
-		s2=s1;
-		int i4 = s.indexOf("package");
-		while(i4!=-1) {
-			int j2 = s1.indexOf(";", i4);
-			s2 = s2.replaceAll(s1.substring(i4, j2+1), "").trim();
-			i4 = s1.indexOf("package", j2);
-		}
-		
-		s2= s2.replaceAll("\\s+", " ");
-		//System.out.println(s2);
-		
 		findClass f= new findClass();
-		int i2 = s2.indexOf(";");
+		int i2 = s.indexOf(";");
 		while (i2!=-1) {
-			if(s2.charAt(i2-1) == ')') {
-				int k = s2.lastIndexOf("=", i2);
-				int k2 = s2.lastIndexOf(" ", s2.lastIndexOf(" ", k)-1);
-				name = s2.substring(k2+1, k);
+			if(s.charAt(i2-2) == ')') {
+				int k = s.lastIndexOf("=", i2);
+				int k2 = s.lastIndexOf(" ", s.lastIndexOf(" ", k)-1);
+				name = s.substring(k2+1, k);
 			}
 			else {
-				int i3 = s2.lastIndexOf(" " , s2.lastIndexOf(" ", i2)-1);
-				name = s2.substring(i3+1, i2);
+				int i3 = s.lastIndexOf(" " , s.lastIndexOf(" ", s.lastIndexOf(" ", i2)-1)-1);
+				name = s.substring(i3+1, i2);
 			}
 			
-			System.out.println("Attribute's Name: " + name);
-			String[] tmp = name.split(" ");
-			if(f.getNameClass(s).contains(tmp[0])) {
-				int k1 = s2.lastIndexOf("class", s2.lastIndexOf(tmp[0], i2));
-				int k2 = s2.indexOf(" " , s2.indexOf(" " ,k1+6));
-				String tmp2 = s2.substring(s2.indexOf(" ", k1) +1, k2);
-				System.out.println(tmp2 + " has a " + tmp[0]);
+			int temp = s.lastIndexOf(" ", s.indexOf(name)-2);
+			if ((s.substring(temp+1 , s.indexOf(name)-1)).equals("private")) {
+				System.out.print("-");
 			}
-			i2 = s2.indexOf(";", i2+1);
+			else System.out.print("+");
+			//System.out.println(s.substring(temp+1 , s.indexOf(name)-1));
+			String[] tmp = name.split(" ");
+			System.out.println(tmp[1] +": " + tmp[0]);
+			if(f.getNameClass(s1).contains(tmp[0])) {
+				System.out.println(f.getSimpleNameClass(s) + " has a " + tmp[0]);
+			}
+			i2 = s.indexOf(";", i2+1);
 		}
 	}
 	
 	
+    public String getExtend (String s) {
+    	String tmp;
+    	int i = s.indexOf(" extends ");
+    	int i2 = s.indexOf(" ", i+9);
+        tmp = s.substring(i+9, i2);
+    	return tmp;
+    }
+    
+    public boolean hasImplement(String s) {
+    	int i = s.indexOf(" implements ");
+    	if (i==-1) return false;
+    	return true;
+    }
+    
+    public String[] getImplement(String s) {
+    	String tmp;
+    	int i = s.indexOf(" implements ");
+    	//if (i!=-1) {
+	    	int i2 = s.indexOf("{", i);
+	    	tmp = s.substring(i+12, i2);	    	
+	    	String[] temp = tmp.split(",");
+	    	return temp;
+    	//}
+    	//return null;
+    }
+    
 	public void nameMethod(String s) {
 		int i = s.indexOf("(");
 		while (i!=-1) {
-			int tmp2 = s.lastIndexOf(" ", i);
-			int tmp3 = s.lastIndexOf(" ", tmp2-1);
-			int tmp4 = s.indexOf("{", i);
-			System.out.println("Method's Name: " + s.substring(tmp3+1, tmp4-1));
-			i = s.indexOf("(", tmp4);
+			if(s.charAt((s.indexOf(")", i) +2)) == ';') {
+				i= s.indexOf("(", i+1);
+			}
+			else {
+				int tmp2 = s.lastIndexOf(" ", i);
+				int tmp3 = s.lastIndexOf(" ", tmp2-1);
+				int tmp4 = s.indexOf("{", i);
+				int tmp5 = s.lastIndexOf(" ", tmp3-1);
+				int tmp6 = s.lastIndexOf(" " , tmp5-1);
+				if ((s.substring(tmp6+1, tmp5)).equals("abstract")){
+					tmp4 = s.indexOf(";",i);
+				}
+				if((s.substring(tmp6+1, tmp5)).equals("static")) {
+					if((s.substring(s.lastIndexOf(" ", tmp6-1)+1, tmp6)).equals("private")) {
+						System.out.print("-");
+					}
+					else System.out.print("+");
+				}
+				else {
+					if ((s.substring(tmp6+1, tmp5)).equals("private")) {
+						System.out.print("-");
+					}
+					else System.out.print("+");
+				}
+				System.out.println(s.substring(tmp3+1, tmp4-1) + ": " +s.substring(tmp5+1, tmp3));
+				i = s.indexOf("(", tmp4);
+			}
 		}
 	}
 	
