@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.awt.event.*;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
 
 public class diagramFrame extends JFrame {
     diagramPanel diagram = new diagramPanel();
@@ -18,7 +20,7 @@ public class diagramFrame extends JFrame {
 //        setSize(1280, 720);
         setLayout(new BorderLayout());
         setSize(1280, 720);
-
+        setPreferredSize(new Dimension(10000,4000));
         // Scrollpane
 //        JScrollPane scrollPane = new JScrollPane(diagram, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 ////        diagram.add(scrollPane, BorderLayout.CENTER);
@@ -27,18 +29,27 @@ public class diagramFrame extends JFrame {
 //        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 //        scrollPane.setPreferredSize(new Dimension(100, 200));
 //        add(scrollPane, BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(diagram, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        Border brd = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK);
+//        diagram.setBorder(brd);
+        scrollPane.setBorder(brd);
         setPreferredSize(new Dimension(1280, 720));
 
         // Add to diagram
         diagram.addKeyListener(new MyKeyListener());
         diagram.setFocusable(true);
+//        diagram.setOpaque(false);
 //        diagram.setPreferredSize(new Dimension(1280, 635));
 //        scrollPane.getViewport().setView(diagram);
         // Add to frame
-        add(diagram);
+        getContentPane().add(scrollPane, BorderLayout.CENTER);
+
+//        getContentPane().add(diagram);
 
         // Init JFrame
 //        setResizable(false);
+        pack();
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(false);
     }

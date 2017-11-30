@@ -109,7 +109,7 @@ public class menu extends JFrame {
         p.add(analyzeButton);
         p.add(tutorial);
         p.add(filePath);
-        add(p);
+        getContentPane().add(p);
 
         // Init JFrame
         setResizable(false);

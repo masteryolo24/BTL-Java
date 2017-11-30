@@ -17,7 +17,8 @@ public class diagramPanel extends JPanel {
     }
 
     @Override
-    public void paint(Graphics g) {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
         int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
         int X1 = 100, Y1 = 100;
         Graphics2D g2D = (Graphics2D) g;
@@ -52,6 +53,10 @@ public class diagramPanel extends JPanel {
         }
         setPreferredSize(new Dimension(X1 + wordWidth * (test.longestStringLen[test.numberClass - 1]) + 100,Y1 + wordHeight * test.maxNumberClassInfo + 100));
         repaint();
+    }
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(4000, 4000);
     }
 
     class mouseHandler extends MouseMotionAdapter implements
