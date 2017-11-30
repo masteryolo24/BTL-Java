@@ -38,7 +38,7 @@ public class diagramFrame extends JFrame {
         add(diagram);
 
         // Init JFrame
-        setResizable(false);
+//        setResizable(false);
         setLocationRelativeTo(null);
         setVisible(false);
     }
