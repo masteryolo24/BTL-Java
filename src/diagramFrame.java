@@ -15,39 +15,24 @@ public class diagramFrame extends JFrame {
     diagramPanel diagram = new diagramPanel();
 
     public diagramFrame() {
+
         // Size and name of JFrame
         super("Java SE Project Reader");
-//        setSize(1280, 720);
         setLayout(new BorderLayout());
-        setSize(1280, 720);
-        setPreferredSize(new Dimension(10000,4000));
-        // Scrollpane
-//        JScrollPane scrollPane = new JScrollPane(diagram, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-////        diagram.add(scrollPane, BorderLayout.CENTER);
-//        JScrollPane scrollPane = new JScrollPane(diagram);
-//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-//        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-//        scrollPane.setPreferredSize(new Dimension(100, 200));
-//        add(scrollPane, BorderLayout.CENTER);
-        JScrollPane scrollPane = new JScrollPane(diagram, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        Border brd = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK);
-//        diagram.setBorder(brd);
-        scrollPane.setBorder(brd);
         setPreferredSize(new Dimension(1280, 720));
+
+        // Scrollpane
+        JScrollPane scrollPane = new JScrollPane(diagram, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 
         // Add to diagram
         diagram.addKeyListener(new MyKeyListener());
         diagram.setFocusable(true);
-//        diagram.setOpaque(false);
-//        diagram.setPreferredSize(new Dimension(1280, 635));
-//        scrollPane.getViewport().setView(diagram);
+
         // Add to frame
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
-//        getContentPane().add(diagram);
-
         // Init JFrame
-//        setResizable(false);
+        setResizable(true);
         pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -58,12 +43,12 @@ public class diagramFrame extends JFrame {
         @Override
         public void keyReleased(KeyEvent e) {
 
-            // PrientScreen
+            // PrintScreen
             if (e.getKeyCode() == 154) {
                 BufferedImage image = new BufferedImage(diagram.getWidth(), diagram.getHeight(), BufferedImage.TYPE_INT_RGB);
                 Graphics2D g = image.createGraphics();
                 diagram.printAll(g);
-//                g.dispose();
+                g.dispose();
                 try {
                     ImageIO.write(image, "jpg", new File("Diagram.jpg"));
                     ImageIO.write(image, "png", new File("Diagram.png"));

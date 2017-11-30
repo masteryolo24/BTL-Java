@@ -3,17 +3,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class diagramPanel extends JPanel {
-    int getWidth;
-    int getWeight;
-    int X1;
-    int Y1;
-
+    int width;
+    int height;
     public diagramPanel() {
 //        repaint();
-//        this.getWidth = getWidth();
-//        this.getWeight = getWeight();
-//        this.X1 = 100;
-//        this.Y1 = 100;
     }
 
     @Override
@@ -51,12 +44,13 @@ public class diagramPanel extends JPanel {
             X1 += wordWidth * (test.longestStringLen[i]) + boxSpace;
             Y1 = 100;
         }
-        setPreferredSize(new Dimension(X1 + wordWidth * (test.longestStringLen[test.numberClass - 1]) + 100,Y1 + wordHeight * test.maxNumberClassInfo + 100));
+        width = X1 + 50;
+        height = Y1 + wordHeight * test.maxNumberClassInfo + 150;
         repaint();
     }
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(4000, 4000);
+        return new Dimension(width, height);
     }
 
     class mouseHandler extends MouseMotionAdapter implements
@@ -92,13 +86,5 @@ public class diagramPanel extends JPanel {
 
         }
     }
-
-//    int getWidth() {
-//
-//    }
-//    int getWeight() {
-//
-//    }
-
 }
 
