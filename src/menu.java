@@ -23,7 +23,6 @@ public class menu extends JFrame {
         fileButton.setFocusPainted(false);
         fileButton.setMnemonic(KeyEvent.VK_J);
         fileButton.setToolTipText("Click to choose Java file");
-
         folderButton.setBounds(125, 105, 145, 30);
         folderButton.setFocusPainted(false);
         folderButton.setMnemonic(KeyEvent.VK_F);
