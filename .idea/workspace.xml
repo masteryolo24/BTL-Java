@@ -12,11 +12,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="df.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/df.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gf.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="339" column="15" lean-forward="true" selection-start-line="339" selection-start-column="15" selection-end-line="339" selection-end-column="15" />
+            <state relative-caret-position="357">
+              <caret line="191" column="32" lean-forward="true" selection-start-line="191" selection-start-column="32" selection-end-line="191" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -25,39 +35,33 @@
       <file leaf-file-name="Example.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Example.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4001">
-              <caret line="87" column="43" lean-forward="false" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
+            <state relative-caret-position="592">
+              <caret line="297" column="17" lean-forward="false" selection-start-line="297" selection-start-column="17" selection-end-line="297" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3121#3122#0" expanded="true" />
-                <element signature="e#3173#3174#0" expanded="true" />
-                <element signature="e#3223#3590#0" expanded="true" />
-                <element signature="e#3589#3590#0" expanded="true" />
-                <element signature="e#4748#4749#0" expanded="true" />
-                <element signature="e#4790#4791#0" expanded="true" />
-                <element signature="e#5282#5283#0" expanded="true" />
-                <element signature="e#5349#5350#0" expanded="true" />
-                <element signature="e#5631#5632#0" expanded="true" />
-                <element signature="e#5667#5668#0" expanded="true" />
-                <element signature="e#5707#5708#0" expanded="true" />
-                <element signature="e#5744#5745#0" expanded="true" />
-                <element signature="e#6388#6389#0" expanded="true" />
-                <element signature="e#6424#6425#0" expanded="true" />
-                <element signature="e#6486#6487#0" expanded="true" />
-                <element signature="e#6535#6536#0" expanded="true" />
-                <element signature="e#6594#6595#0" expanded="true" />
-                <element signature="e#6675#6676#0" expanded="true" />
-                <element signature="e#7542#7543#0" expanded="true" />
-                <element signature="e#7593#7594#0" expanded="true" />
-                <element signature="e#8605#8606#0" expanded="true" />
-                <element signature="e#8642#8643#0" expanded="true" />
-                <element signature="e#8704#8705#0" expanded="true" />
-                <element signature="e#8753#8754#0" expanded="true" />
-                <element signature="e#8812#8813#0" expanded="true" />
-                <element signature="e#8895#8896#0" expanded="true" />
-                <element signature="e#8955#8956#0" expanded="true" />
-                <element signature="e#9006#9007#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDraggableComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,8 +69,8 @@
       <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
+            <state relative-caret-position="760">
+              <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -75,11 +79,10 @@
       <file leaf-file-name="diagramFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+            <state relative-caret-position="164">
+              <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -88,8 +91,8 @@
       <file leaf-file-name="menu.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="120" column="25" lean-forward="true" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+            <state relative-caret-position="1952">
+              <caret line="120" column="25" lean-forward="false" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,11 +129,13 @@
       <find>lastMouseX</find>
       <find>MouseMotionHandler</find>
       <find>panel</find>
-      <find>drag</find>
       <find>wheel</find>
       <find>scale</find>
-      <find>mouse</find>
       <find>scaleFactor</find>
+      <find>drag</find>
+      <find>mouse</find>
+      <find>pressed</find>
+      <find>repaint()</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -163,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/toolBar.java" />
         <option value="$PROJECT_DIR$/src/ToolBarDemo.java" />
         <option value="$PROJECT_DIR$/src/v.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Setup.java" />
         <option value="$PROJECT_DIR$/src/menuController.java" />
         <option value="$PROJECT_DIR$/src/mainController.java" />
@@ -182,19 +186,22 @@
         <option value="$PROJECT_DIR$/src/f.java" />
         <option value="$PROJECT_DIR$/src/fds.java" />
         <option value="$PROJECT_DIR$/src/LineBreakSample.java" />
-        <option value="$PROJECT_DIR$/src/MouseWheelEventDemo.java" />
         <option value="$PROJECT_DIR$/diagram.txt" />
         <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/df.java" />
         <option value="$PROJECT_DIR$/src/fd.java" />
         <option value="$PROJECT_DIR$/src/Scroller.java" />
         <option value="$PROJECT_DIR$/src/gff.java" />
         <option value="$PROJECT_DIR$/src/Example.java" />
-        <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/menu.java" />
-        <option value="$PROJECT_DIR$/src/gf.java" />
         <option value="$PROJECT_DIR$/src/diagramPanel.java" />
         <option value="$PROJECT_DIR$/src/diagramFrame.java" />
+        <option value="$PROJECT_DIR$/src/gf.java" />
+        <option value="$PROJECT_DIR$/src/fg.java" />
+        <option value="$PROJECT_DIR$/src/MouseWheelEventDemo.java" />
+        <option value="$PROJECT_DIR$/src/MyDraggableComponent.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
+        <option value="$PROJECT_DIR$/src/df.java" />
       </list>
     </option>
   </component>
@@ -204,7 +211,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-65" />
     <option name="width" value="732" />
     <option name="height" value="780" />
@@ -225,8 +232,9 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -243,7 +251,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,6 +297,20 @@
     <configuration name="LineBreakSample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="LineBreakSample" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JavaSwing" />
+      <envs />
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -424,35 +445,21 @@
       <module name="JavaSwing" />
       <envs />
     </configuration>
-    <configuration name="mainProject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="mainProject" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JavaSwing" />
-      <envs />
-    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.Scroller" />
       <item index="1" class="java.lang.String" itemvalue="Application.mainController" />
-      <item index="2" class="java.lang.String" itemvalue="Application.mainProject" />
-      <item index="3" class="java.lang.String" itemvalue="Application.LineBreakSample" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Example" />
-      <item index="5" class="java.lang.String" itemvalue="Application.diagramPanel" />
+      <item index="2" class="java.lang.String" itemvalue="Application.LineBreakSample" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Example" />
+      <item index="4" class="java.lang.String" itemvalue="Application.diagramPanel" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.mainController" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Example" />
-        <item index="2" class="java.lang.String" itemvalue="Application.diagramPanel" />
-        <item index="3" class="java.lang.String" itemvalue="Application.LineBreakSample" />
-        <item index="4" class="java.lang.String" itemvalue="Application.mainProject" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Example" />
+        <item index="3" class="java.lang.String" itemvalue="Application.diagramPanel" />
+        <item index="4" class="java.lang.String" itemvalue="Application.LineBreakSample" />
       </list>
     </recent_temporary>
   </component>
@@ -479,7 +486,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -495,8 +502,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16703418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16868798" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -508,6 +514,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972437" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -520,18 +527,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/event/ActionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/icons/zoom in.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/icons/zoom out.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -552,7 +547,7 @@
     <entry file="file://$PROJECT_DIR$/src/ToolBarDemo2.java" />
     <entry file="file://$PROJECT_DIR$/src/ToolBarDemo.java" />
     <entry file="file://$PROJECT_DIR$/src/PaintComponent.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java" />
     <entry file="file://$PROJECT_DIR$/src/ImageTest.java" />
     <entry file="file://$PROJECT_DIR$/src/ButtonActions.java" />
     <entry file="file://$PROJECT_DIR$/JavaSwing.iml">
@@ -564,7 +559,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WrapLayout.java" />
     <entry file="file://$PROJECT_DIR$/src/windows_test.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java" />
     <entry file="file://$PROJECT_DIR$/src/read.java" />
     <entry file="file://$PROJECT_DIR$/New Text Document.txt" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
@@ -613,22 +608,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/df.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/f.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/f.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/JOptionPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -669,21 +649,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Scroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Scroller.java" />
     <entry file="file://$PROJECT_DIR$/src/mainController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
           <folding>
-            <element signature="e#71#72#0" expanded="true" />
-            <element signature="e#104#105#0" expanded="true" />
+            <element signature="e#71#72#0" expanded="false" />
+            <element signature="e#104#105#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -696,19 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MouseWheelEventDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="80" column="47" lean-forward="false" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/event/MouseMotionAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="55" column="55" lean-forward="false" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,85 +680,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diagramPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Example.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4001">
-          <caret line="87" column="43" lean-forward="false" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3121#3122#0" expanded="true" />
-            <element signature="e#3173#3174#0" expanded="true" />
-            <element signature="e#3223#3590#0" expanded="true" />
-            <element signature="e#3589#3590#0" expanded="true" />
-            <element signature="e#4748#4749#0" expanded="true" />
-            <element signature="e#4790#4791#0" expanded="true" />
-            <element signature="e#5282#5283#0" expanded="true" />
-            <element signature="e#5349#5350#0" expanded="true" />
-            <element signature="e#5631#5632#0" expanded="true" />
-            <element signature="e#5667#5668#0" expanded="true" />
-            <element signature="e#5707#5708#0" expanded="true" />
-            <element signature="e#5744#5745#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
-            <element signature="e#6424#6425#0" expanded="true" />
-            <element signature="e#6486#6487#0" expanded="true" />
-            <element signature="e#6535#6536#0" expanded="true" />
-            <element signature="e#6594#6595#0" expanded="true" />
-            <element signature="e#6675#6676#0" expanded="true" />
-            <element signature="e#7542#7543#0" expanded="true" />
-            <element signature="e#7593#7594#0" expanded="true" />
-            <element signature="e#8605#8606#0" expanded="true" />
-            <element signature="e#8642#8643#0" expanded="true" />
-            <element signature="e#8704#8705#0" expanded="true" />
-            <element signature="e#8753#8754#0" expanded="true" />
-            <element signature="e#8812#8813#0" expanded="true" />
-            <element signature="e#8895#8896#0" expanded="true" />
-            <element signature="e#8955#8956#0" expanded="true" />
-            <element signature="e#9006#9007#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diagramPanel.java" />
     <entry file="file://$PROJECT_DIR$/Diagram.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="120" column="25" lean-forward="true" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/gf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="339" column="15" lean-forward="true" selection-start-line="339" selection-start-column="15" selection-end-line="339" selection-end-column="15" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Diagram.jpg">
@@ -802,13 +694,75 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/fg.java" />
+    <entry file="file://$PROJECT_DIR$/src/Example.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+        <state relative-caret-position="592">
+          <caret line="297" column="17" lean-forward="false" selection-start-line="297" selection-start-column="17" selection-end-line="297" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="40" column="48" lean-forward="true" selection-start-line="40" selection-start-column="48" selection-end-line="40" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/df.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="191" column="32" lean-forward="true" selection-start-line="191" selection-start-column="32" selection-end-line="191" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1952">
+          <caret line="120" column="25" lean-forward="false" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="127" column="41" lean-forward="true" selection-start-line="127" selection-start-column="41" selection-end-line="127" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -16,7 +16,7 @@
 //
 //        g2D.setFont(otherFont);
 //        ArrayList<Element> listOfElement = obj.getListOfElement();
-//        int addingSpace = headerHeight + line_spacing;
+//        int addingS pace = headerHeight + line_spacing;
 //        for (Element element : listOfElement) {
 //
 //        if (element instanceof Method) continue;

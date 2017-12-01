@@ -11,6 +11,7 @@ public class diagramFrame extends JFrame {
     diagramPanel diagram = new diagramPanel();
     double scale = 1;
     double width, height;
+    int[][] rectLocation;
 
     public diagramFrame() {
 
@@ -64,7 +65,7 @@ public class diagramFrame extends JFrame {
             test test = new test();
 
             // Draw
-            int[][] rectLocation = new int[test.numberClass()][4];
+            rectLocation = new int[test.numberClass()][4];
             for (int i = 0; i < test.numberClass(); i++) {
                 // X1
                 rectLocation[i][0] = X1;
@@ -118,13 +119,13 @@ public class diagramFrame extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 mouseX = e.getX();
                 mouseY = e.getY();
-                repaint();
-                System.out.println(mouseX);
-                System.out.println(mouseY);
+//                repaint();
             }
 
             @Override
             public void mousePressed(MouseEvent e) {
+                rectLocation[0][0] = 200;
+                rectLocation[0][1] = 200;
 
             }
 
@@ -169,13 +170,13 @@ public class diagramFrame extends JFrame {
             else if (e.getKeyCode() == 107 || e.getKeyCode() == 46) {
                 if (scale > 2) scale = 2;
                 else scale += 0.1;
-                repaint();
+//                repaint();
             }
                 //Zoom out
             else if (e.getKeyCode() == 109 || e.getKeyCode() == 44) {
                 if (scale < 0.5) scale = 0.5;
                 else scale -= 0.1;
-                repaint();
+//                repaint();
             }
 
         }
