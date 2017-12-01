@@ -23,10 +23,20 @@ public class test {
         return 6;
     }
     int maxNumberInfo() {
-        return 13;
+        int maxNumberInfo = 0;
+        for(int i = 0; i < numberClass(); i++) {
+            if(numberClassInfo()[i] > maxNumberInfo)
+                maxNumberInfo = numberClassInfo()[i];
+        }
+        return maxNumberInfo;
     }
     int maxNumberClassInfo() {
-        return 13;
+        int max = numberClassInfo()[0];
+        for(int i = 0; i < numberClass(); i++) {
+            if(numberClassInfo()[i] > max)
+                max = numberClassInfo()[i];
+        }
+        return max;
     }
     int [] numberClassAttributes() {
         int[] numberClassAttributes = new int[]{2, 5, 2, 1, 2, 3};
@@ -37,11 +47,22 @@ public class test {
         return numberClassMethods;
     }
     int [] numberClassInfo() {
-        int [] numberClassInfo = new int[] {10, 13, 11, 10, 13, 13};
+        int [] numberClassInfo = new int[numberClass()];
+        for(int i = 0; i < numberClass(); i++) {
+            numberClassInfo[i] = numberClassAttributes()[i] + numberClassMethods()[i] + 1;
+        }
         return numberClassInfo;
     }
     int [] longestStringLen() {
-        int[] longestStringLen = new int[] {24, 34, 32, 32, 43, 50};
+        int [] longestStringLen = new int[numberClass()];
+        for(int i = 0; i < numberClass(); i++) {
+            longestStringLen[i] = 0;
+            for(int j = 0; j < numberClassInfo()[i]; j++) {
+                if(getInfo()[i][j].length() > longestStringLen[i])
+                    longestStringLen[i] = getInfo()[i][j].length();
+            }
+        }
+//        int[] longestStringLen = new int[] {24, 34, 32, 32, 43, 50};
         return longestStringLen;
     }
     String[][] getInfo() {
