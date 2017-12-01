@@ -8,7 +8,6 @@ public class test {
     final int[] longestStringLen;
     final String[][] getInfo;
 
-
     public test() {
         this.numberClass = numberClass();
         this.maxNumberInfo = maxNumberInfo();
@@ -62,7 +61,6 @@ public class test {
                     longestStringLen[i] = getInfo()[i][j].length();
             }
         }
-//        int[] longestStringLen = new int[] {24, 34, 32, 32, 43, 50};
         return longestStringLen;
     }
     String[][] getInfo() {

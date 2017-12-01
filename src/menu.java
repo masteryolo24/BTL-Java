@@ -64,8 +64,6 @@ public class menu extends JFrame {
                     String filename = f.getAbsolutePath();
                     filePath.setText(filename);
                 } else if( result == JFileChooser.CANCEL_OPTION) {
-                    //trong doan duoi la 1 duong dan dung khong
-
                     filePath.setText("Cancel choose Java file");
                 }
             }
