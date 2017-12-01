@@ -46,6 +46,7 @@ public class diagramFrame extends JFrame {
             mouseHandler mouseHandler = new mouseHandler();
             addMouseMotionListener(mouseHandler);
             addMouseListener(mouseHandler);
+            repaint();
         }
 
         @Override
@@ -100,6 +101,7 @@ public class diagramFrame extends JFrame {
             }
             width = X1 + 50;
             height = Y1 + wordHeight * test.maxNumberClassInfo + 150;
+
             repaint();
         }
 
@@ -167,13 +169,13 @@ public class diagramFrame extends JFrame {
             else if (e.getKeyCode() == 107 || e.getKeyCode() == 46) {
                 if (scale > 2) scale = 2;
                 else scale += 0.1;
-//                repaint();
+                repaint();
             }
                 //Zoom out
             else if (e.getKeyCode() == 109 || e.getKeyCode() == 44) {
                 if (scale < 0.5) scale = 0.5;
                 else scale -= 0.1;
-//                repaint();
+                repaint();
             }
 
         }
