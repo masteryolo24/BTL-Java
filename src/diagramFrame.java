@@ -168,14 +168,14 @@ public class diagramFrame extends JFrame {
 
             // Zoom in
             else if (e.getKeyCode() == 107 || e.getKeyCode() == 46) {
+                scale += 0.1;
                 if (scale > 2) scale = 2;
-                else scale += 0.1;
 //                repaint();
             }
                 //Zoom out
             else if (e.getKeyCode() == 109 || e.getKeyCode() == 44) {
+                scale -= 0.1;
                 if (scale < 0.5) scale = 0.5;
-                else scale -= 0.1;
 //                repaint();
             }
 
