@@ -71,15 +71,18 @@ public class diagramFrame extends JFrame {
             for (int i = 0; i < test.numberClass(); i++) {
                 // Background rect
                 g2D.setColor(new Color(255, 255, 220));
-                g2D.fillRect(rectLocation[i][0], rectLocation[i][1], wordWidth * test.longestStringLen[i], wordHeight * test.numberClassInfo[i] + wordHeight / 2);
+                g2D.fillRect(rectLocation[i][0], rectLocation[i][1], rectLocation[i][2] - rectLocation[i][0], rectLocation[i][3] - rectLocation[i][1]);
 
                 g2D.setColor(Color.BLACK);
                 // Border rect
-                g2D.drawRect(rectLocation[i][0], rectLocation[i][1], wordWidth * test.longestStringLen[i], wordHeight * test.numberClassInfo[i] + wordHeight / 2);
+                g2D.drawRect(rectLocation[i][0], rectLocation[i][1], rectLocation[i][2] - rectLocation[i][0], rectLocation[i][3] - rectLocation[i][1]);
 
                 // Lines separate
-                g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight + lineSpace, rectLocation[i][0] + wordWidth * test.longestStringLen[i], rectLocation[i][1] + wordHeight + lineSpace);
-                g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace, rectLocation[i][0] + wordWidth * test.longestStringLen[i], rectLocation[i][1] + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace);
+                g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight + lineSpace, rectLocation[i][2], rectLocation[i][1] + wordHeight + lineSpace);
+                if(test.numberClassAttributes[i] == 1 || test.numberClassAttributes[i] == 0)
+                    g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight * 2 + lineSpace, rectLocation[i][2], rectLocation[i][1] + wordHeight * 2 + lineSpace);
+                else
+                    g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace, rectLocation[i][2], rectLocation[i][1] + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace);
 
                 // Words
                 g2D.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
@@ -216,8 +219,14 @@ public class diagramFrame extends JFrame {
             for (int i = 1; i < test.numberClass(); i++) {
                 rectLocation[i][0] = rectLocation[i-1][2] + boxSpace;
                 rectLocation[i][1] = Y1;
-                rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
-                rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
+                if (wordWidth * test.longestStringLen[i] < 100)
+                    rectLocation[i][2] = rectLocation[i][0] + 100;
+                else
+                    rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
+                if (test.numberClassInfo[i] == 0 || test.numberClassInfo[i] == 1)
+                    rectLocation[i][3] = rectLocation[i][1] + wordHeight * 3 + wordHeight / 2;
+                else
+                    rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
             }
         }
     }
