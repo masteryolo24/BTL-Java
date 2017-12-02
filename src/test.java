@@ -30,19 +30,19 @@ public class test {
         return maxNumberInfo;
     }
     int maxNumberClassInfo() {
-        int max = numberClassInfo()[0];
+        int maxNumberClassInfo = 0;
         for(int i = 0; i < numberClass(); i++) {
-            if(numberClassInfo()[i] > max)
-                max = numberClassInfo()[i];
+            if(numberClassInfo()[i] > maxNumberClassInfo)
+                maxNumberClassInfo = numberClassInfo()[i];
         }
-        return max;
+        return maxNumberClassInfo;
     }
     int [] numberClassAttributes() {
-        int[] numberClassAttributes = new int[]{2, 5, 2, 1, 2, 3};
+        int[] numberClassAttributes = new int[]{2, 0, 2, 1, 2, 3};
         return numberClassAttributes;
     }
     int [] numberClassMethods() {
-        int [] numberClassMethods = new int[] {7, 7, 8, 8, 10, 9};
+        int [] numberClassMethods = new int[] {7, 0, 8, 8, 10, 9};
         return numberClassMethods;
     }
     int [] numberClassInfo() {

@@ -57,11 +57,9 @@ public class diagramFrame extends JFrame {
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-
-
             Graphics2D g2D = (Graphics2D) g;
-//            g2D.translate(620, 360);
             g2D.scale(scale, scale);
+
             // Background
             g2D.setColor(new Color(238, 238, 238));
             g2D.fillRect(0, 0, 1280, 720);
@@ -98,9 +96,6 @@ public class diagramFrame extends JFrame {
                 if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] + 100;
                 if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
-//            width = X1 + 50;
-//            height = Y1 + wordHeight * test.maxNumberClassInfo + 150;
-
             repaint();
         }
 
