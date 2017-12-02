@@ -9,10 +9,9 @@ import java.awt.event.*;
 
 public class diagramFrame extends JFrame {
     diagramPanel diagram = new diagramPanel();
-
-    int mouseX = 0, mouseY = 0;
-    int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
     int X1 = 100, Y1 = 100;
+    int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
+    int screenX = 0, screenY = 0;
 
     public diagramFrame() {
 
@@ -111,20 +110,31 @@ public class diagramFrame extends JFrame {
             return new Dimension((int) widthScale, (int) heightScale);
         }
 
-        class mouseHandler extends MouseMotionAdapter implements MouseListener {
-
+        class mouseHandler extends MouseMotionAdapter implements MouseMotionListener, MouseListener{
             @Override
-            public void mouseClicked(MouseEvent e) {
-                mouseX = e.getX();
-                mouseY = e.getY();
-//                repaint();
+            public void mousePressed(MouseEvent e) {
+                screenX = e.getX();
+                screenY = e.getY();
             }
 
             @Override
-            public void mousePressed(MouseEvent e) {
-//                rectLocation[0][0] += 10;
-//                rectLocation[0][1] += 10;
-                repaint();
+            public void mouseDragged(MouseEvent e) {
+                int deltaX = e.getX() - screenX;
+                int deltaY = e.getY() - screenY;
+                rectLocation[0][0] += deltaX;
+                rectLocation[0][1] += deltaY;
+                screenX = e.getX();
+                screenY = e.getY();
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
             }
 
             @Override
@@ -143,7 +153,7 @@ public class diagramFrame extends JFrame {
             }
         }
 
-        class MyKeyListener extends KeyAdapter {
+            class MyKeyListener extends KeyAdapter {
             @Override
             public void keyReleased(KeyEvent e) {
 

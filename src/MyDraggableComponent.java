@@ -8,7 +8,7 @@ public class MyDraggableComponent
 
     private volatile int screenX = 0;
     private volatile int screenY = 0;
-    private volatile int myX = 0;
+    private volatile int myX = 30;
     private volatile int myY = 0;
 
     public MyDraggableComponent() {
@@ -47,7 +47,6 @@ public class MyDraggableComponent
             public void mouseDragged(MouseEvent e) {
                 int deltaX = e.getXOnScreen() - screenX;
                 int deltaY = e.getYOnScreen() - screenY;
-
                 setLocation(myX + deltaX, myY + deltaY);
             }
 

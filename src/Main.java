@@ -13,7 +13,7 @@ public class Main {
         f.add(mc);
 
         f.setSize(500, 500);
-
+        f.setLocationRelativeTo(null);
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         f.setVisible(true);
     }

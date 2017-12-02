@@ -12,21 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="df.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/df.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="gf.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="34" column="44" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="362" selection-end-column="3" />
+            <state relative-caret-position="350">
+              <caret line="251" column="36" lean-forward="true" selection-start-line="251" selection-start-column="36" selection-end-line="251" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -35,13 +25,29 @@
       <file leaf-file-name="diagramFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+            <state relative-caret-position="440">
+              <caret line="126" column="35" lean-forward="false" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#diagramPanel#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
-                <marker date="1512203679393" expanded="false" signature="4178:4356" ph="{...}" />
-                <marker date="1512203679393" expanded="false" signature="5164:6618" ph="{...}" />
+                <element signature="method#mouseMoved#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+                <element signature="method#mouseClicked#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+                <element signature="method#mouseReleased#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+                <element signature="method#mouseEntered#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+                <element signature="class#MyKeyListener#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+                <marker date="1512206896971" expanded="false" signature="4179:4357" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyDraggableComponent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="49" column="56" lean-forward="true" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,6 +58,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="640">
               <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -93,7 +109,6 @@
       <find>jt</find>
       <find>Override</find>
       <find>JButton</find>
-      <find>mouseDragged</find>
       <find>press</find>
       <find>lastMouseX</find>
       <find>MouseMotionHandler</find>
@@ -101,14 +116,15 @@
       <find>scale</find>
       <find>scaleFactor</find>
       <find>drag</find>
-      <find>mouse</find>
       <find>pressed</find>
       <find>repaint()</find>
       <find>wheel</find>
       <find>X1</find>
       <find>lastmouse</find>
-      <find>resiz</find>
       <find>getFontMetrics()</find>
+      <find>resiz</find>
+      <find>mouse</find>
+      <find>mouseDragged</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -170,11 +186,11 @@
         <option value="$PROJECT_DIR$/src/diagramPanel.java" />
         <option value="$PROJECT_DIR$/src/fg.java" />
         <option value="$PROJECT_DIR$/src/MouseWheelEventDemo.java" />
-        <option value="$PROJECT_DIR$/src/MyDraggableComponent.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/src/df.java" />
         <option value="$PROJECT_DIR$/src/gf.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/MyDraggableComponent.java" />
         <option value="$PROJECT_DIR$/src/diagramFrame.java" />
       </list>
     </option>
@@ -185,7 +201,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-65" />
     <option name="width" value="732" />
     <option name="height" value="780" />
@@ -460,7 +476,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -496,16 +512,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="10" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/icons/export.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DemoJFileChooser.java" />
     <entry file="file://$PROJECT_DIR$/src/SwingListenerDemo.java" />
     <entry file="file://$PROJECT_DIR$/src/toolBar.java" />
@@ -633,37 +644,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/event/MouseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="56" column="17" lean-forward="false" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/diagramPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/fg.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="17" column="27" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BasicStrokesEx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -682,6 +668,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Diagram.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Diagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/df.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1580">
@@ -689,6 +693,30 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/event/MouseMotionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="53" column="17" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/awt/event/MouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -702,39 +730,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/gf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="34" column="44" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="362" selection-end-column="3" />
+        <state relative-caret-position="350">
+          <caret line="251" column="36" lean-forward="true" selection-start-line="251" selection-start-column="36" selection-end-line="251" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/df.java">
+    <entry file="file://$PROJECT_DIR$/src/MyDraggableComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="49" lean-forward="true" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="478">
+          <caret line="49" column="56" lean-forward="true" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Diagram.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Diagram.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
+        <state relative-caret-position="440">
+          <caret line="126" column="35" lean-forward="false" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#diagramPanel#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
-            <marker date="1512203679393" expanded="false" signature="4178:4356" ph="{...}" />
-            <marker date="1512203679393" expanded="false" signature="5164:6618" ph="{...}" />
+            <element signature="method#mouseMoved#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+            <element signature="method#mouseReleased#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+            <element signature="method#mouseEntered#0;class#mouseHandler#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+            <element signature="class#MyKeyListener#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
+            <marker date="1512206896971" expanded="false" signature="4179:4357" ph="{...}" />
           </folding>
         </state>
       </provider>
