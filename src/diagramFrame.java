@@ -72,7 +72,7 @@ public class diagramFrame extends JFrame {
                 // Y1
                 rectLocation[i][1] = Y1;
                 // X2
-                rectLocation[i][3] = X1 + wordWidth * (test.longestStringLen[i]);
+                rectLocation[i][2] = X1 + wordWidth * (test.longestStringLen[i]);
                 // Y2
                 rectLocation[i][3] = Y1 + wordHeight * test.numberClassInfo[i] - 1 + wordHeight / 2;
 
