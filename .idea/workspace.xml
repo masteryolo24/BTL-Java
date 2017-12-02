@@ -35,13 +35,13 @@
       <file leaf-file-name="diagramFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+            <state relative-caret-position="277">
+              <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#diagramPanel#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
-                <marker date="1512203369558" expanded="false" signature="4110:4288" ph="{...}" />
-                <marker date="1512203369558" expanded="false" signature="5092:6546" ph="{...}" />
+                <marker date="1512203679393" expanded="false" signature="4178:4356" ph="{...}" />
+                <marker date="1512203679393" expanded="false" signature="5164:6618" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -107,6 +107,7 @@
       <find>wheel</find>
       <find>X1</find>
       <find>lastmouse</find>
+      <find>resiz</find>
       <find>getFontMetrics()</find>
     </findStrings>
     <replaceStrings>
@@ -641,16 +642,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diagramPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/fg.java" />
-    <entry file="file://$PROJECT_DIR$/Diagram.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Diagram.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -725,15 +716,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Diagram.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Diagram.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/diagramFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="125" column="39" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="125" selection-end-column="39" />
+        <state relative-caret-position="277">
+          <caret line="73" column="34" lean-forward="true" selection-start-line="73" selection-start-column="34" selection-end-line="73" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#diagramPanel#0;class#diagramPanel#0;class#diagramFrame#0" expanded="false" />
-            <marker date="1512203369558" expanded="false" signature="4110:4288" ph="{...}" />
-            <marker date="1512203369558" expanded="false" signature="5092:6546" ph="{...}" />
+            <marker date="1512203679393" expanded="false" signature="4178:4356" ph="{...}" />
+            <marker date="1512203679393" expanded="false" signature="5164:6618" ph="{...}" />
           </folding>
         </state>
       </provider>

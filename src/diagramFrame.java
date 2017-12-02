@@ -28,7 +28,7 @@ public class diagramFrame extends JFrame {
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
         // Init JFrame
-        setResizable(false);
+        setResizable(true);
         pack();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -39,7 +39,7 @@ public class diagramFrame extends JFrame {
     class diagramPanel extends JPanel {
         int[][] rectLocation;
         double scale = 1;
-        double width, height;
+        double width = 1280, height = 720;
 
 
         public diagramPanel() {
@@ -93,13 +93,13 @@ public class diagramFrame extends JFrame {
                         g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
                     temp += wordHeight;
                 }
-//                X1 += wordWidth * (test.longestStringLen[i]) + boxSpace;
-//                Y1 = 100;
+
+                // Find max X, max Y
+                if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] +100;
+                if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
 //            width = X1 + 50;
 //            height = Y1 + wordHeight * test.maxNumberClassInfo + 150;
-            width = 4000;
-            height = 3000;
 
             repaint();
         }
@@ -122,8 +122,8 @@ public class diagramFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                rectLocation[0][0] += 10;
-                rectLocation[0][1] += 10;
+//                rectLocation[0][0] += 10;
+//                rectLocation[0][1] += 10;
                 repaint();
             }
 
