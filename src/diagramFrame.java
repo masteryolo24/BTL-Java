@@ -85,20 +85,21 @@ public class diagramFrame extends JFrame {
 
                 // Words
                 g2D.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
+                int temp = wordHeight + 1;
                 for (int j = 0; j < test.numberClassInfo[i]; j++) {
                     if (j == 0)
-                        g2D.drawString(test.getInfo[i][j], X1 + wordHeight / 2 + (wordWidth * (test.longestStringLen[i]) - 1) / 2 - wordWidth / 2 * (test.getInfo[i][j].length() + 2), Y1 + wordHeight);
+                        g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
                     else
-                        g2D.drawString(test.getInfo[i][j], X1 + wordHeight / 2 - 5, Y1 + wordHeight);
-                    Y1 += wordHeight;
+                        g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
+                    temp += wordHeight;
                 }
 //                X1 += wordWidth * (test.longestStringLen[i]) + boxSpace;
 //                Y1 = 100;
             }
 //            width = X1 + 50;
 //            height = Y1 + wordHeight * test.maxNumberClassInfo + 150;
-            width = 1280;
-            height = 720;
+            width = 4000;
+            height = 3000;
 
             repaint();
         }
@@ -121,8 +122,8 @@ public class diagramFrame extends JFrame {
 
             @Override
             public void mousePressed(MouseEvent e) {
-//                rectLocation[0][0] = 200;
-//                rectLocation[0][1] = 200;
+                rectLocation[0][0] += 10;
+                rectLocation[0][1] += 10;
                 repaint();
             }
 
