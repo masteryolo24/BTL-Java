@@ -88,14 +88,14 @@ public class diagramFrame extends JFrame {
                 int temp = wordHeight + 1;
                 for (int j = 0; j < test.numberClassInfo[i]; j++) {
                     if (j == 0)
-                        g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
+                        g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + (rectLocation[i][2] - rectLocation[i][0] + wordWidth * test.getInfo[i][j].length()) / 2 , rectLocation[i][1] + temp);
                     else
                         g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
                     temp += wordHeight;
                 }
 
                 // Find max X, max Y
-                if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] +100;
+                if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] + 100;
                 if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
 //            width = X1 + 50;
