@@ -12,6 +12,7 @@ public class diagramFrame extends JFrame {
     int X1 = 100, Y1 = 100;
     int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
     int screenX = 0, screenY = 0;
+    int i;
 
     public diagramFrame() {
 
@@ -113,18 +114,32 @@ public class diagramFrame extends JFrame {
         class mouseHandler extends MouseMotionAdapter implements MouseMotionListener, MouseListener{
             @Override
             public void mousePressed(MouseEvent e) {
+                test test = new test();
                 screenX = e.getX();
                 screenY = e.getY();
+
+                for(i = 0; i < test.numberClass(); i++) {
+                    if(e.getX() < rectLocation[i][2] && e.getX() > rectLocation[i][0] && e.getY() < rectLocation[i][3] && e.getY() > rectLocation[i][1])
+                        break;
+                }
             }
 
             @Override
             public void mouseDragged(MouseEvent e) {
-                int deltaX = e.getX() - screenX;
-                int deltaY = e.getY() - screenY;
-                rectLocation[0][0] += deltaX;
-                rectLocation[0][1] += deltaY;
-                screenX = e.getX();
-                screenY = e.getY();
+                test test = new test();
+                if(i != test.numberClass()) {
+                    int deltaX = e.getX() - screenX;
+                    int deltaY = e.getY() - screenY;
+                    rectLocation[i][0] += deltaX;
+                    rectLocation[i][1] += deltaY;
+                    screenX = e.getX();
+                    screenY = e.getY();
+
+                    // Reupdate
+                    rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
+                    rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
+                }
+
             }
 
             @Override
