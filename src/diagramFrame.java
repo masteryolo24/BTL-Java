@@ -80,8 +80,8 @@ public class diagramFrame extends JFrame {
                 g2D.drawRect(rectLocation[i][0], rectLocation[i][1], wordWidth * test.longestStringLen[i], wordHeight * test.numberClassInfo[i] + wordHeight / 2);
 
                 // Lines separate
-                g2D.drawLine(X1, Y1 + wordHeight + lineSpace, X1 + wordWidth * (test.longestStringLen[i]) - 1, Y1 + wordHeight + lineSpace);
-                g2D.drawLine(X1, Y1 + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace, X1 + wordWidth * (test.longestStringLen[i]) - 1, Y1 + wordHeight * (test.numberClassAttributes[i] + 1) + 6);
+                g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight + lineSpace, rectLocation[i][0] + wordWidth * test.longestStringLen[i], rectLocation[i][1] + wordHeight + lineSpace);
+                g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace, rectLocation[i][0] + wordWidth * test.longestStringLen[i], rectLocation[i][1] + wordHeight * (test.numberClassAttributes[i] + 1) + lineSpace);
 
                 // Words
                 g2D.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
