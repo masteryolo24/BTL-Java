@@ -95,9 +95,6 @@ public class diagramFrame extends JFrame {
                     temp += wordHeight;
                 }
 
-                // Find max X, max Y
-                if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] + 100;
-                if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
             repaint();
         }
@@ -217,8 +214,18 @@ public class diagramFrame extends JFrame {
 
             // Set other rect location related to the one before it
             for (int i = 1; i < test.numberClass(); i++) {
-                rectLocation[i][0] = rectLocation[i-1][2] + boxSpace;
-                rectLocation[i][1] = Y1;
+                if (i == test.numberClass() / 2 - 1) {
+                    int maxHeightLine1 = 0;
+                    for(int j = 0; j < test.numberClass() / 2 - 2; j++) {
+                        if(rectLocation[j][3] > maxHeightLine1)
+                            maxHeightLine1 = rectLocation[j][3];
+                    }
+                    rectLocation[i][0] = X1;
+                    rectLocation[i][1] = maxHeightLine1 + 300;
+                } else {
+                    rectLocation[i][0] = rectLocation[i - 1][2] + boxSpace;
+                    rectLocation[i][1] = rectLocation[i-1][1];
+                }
                 if (wordWidth * test.longestStringLen[i] < 100)
                     rectLocation[i][2] = rectLocation[i][0] + 100;
                 else
@@ -227,6 +234,10 @@ public class diagramFrame extends JFrame {
                     rectLocation[i][3] = rectLocation[i][1] + wordHeight * 3 + wordHeight / 2;
                 else
                     rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
+
+                // Find max X, max Y
+                if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] + 100;
+                if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
         }
     }
