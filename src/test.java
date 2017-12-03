@@ -19,7 +19,7 @@ public class test {
         this.getInfo = getInfo();
     }
     int numberClass() {
-        return 6;
+        return 10;
     }
     int maxNumberInfo() {
         int maxNumberInfo = 0;
@@ -37,11 +37,11 @@ public class test {
         return maxNumberClassInfo;
     }
     int [] numberClassAttributes() {
-        int[] numberClassAttributes = new int[]{2, 5, 2, 1, 2, 3};
+        int[] numberClassAttributes = new int[]{2, 5, 2, 1, 2, 3, 0, 0, 0, 0};
         return numberClassAttributes;
     }
     int [] numberClassMethods() {
-        int [] numberClassMethods = new int[] {7, 7, 8, 8, 10, 9};
+        int [] numberClassMethods = new int[] {7, 7, 8, 8, 10, 9, 0, 0, 0, 0};
         return numberClassMethods;
     }
     int [] numberClassInfo() {
@@ -140,6 +140,15 @@ public class test {
         getInfo[5][10] = "+ setEdge2(double): void";
         getInfo[5][11] = "+ setEdge3(double): void";
         getInfo[5][12] = "+ toString(): String";
+
+        getInfo[6][0] = "Ca";
+
+        getInfo[7][0] = "Sĩ";
+
+        getInfo[8][0] = "Chi";
+
+        getInfo[9][0] = "Pu";
+
 
         return getInfo;
     }
