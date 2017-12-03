@@ -66,7 +66,6 @@ public class test {
         return longestStringLen;
     }
     int [][] relationship() {
-
         // 0 : no relationship
         // 1 : generalization
         // 2 : realization
@@ -78,7 +77,7 @@ public class test {
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                                               {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {1, 2, 3, 4, 0, 0, 0, 0, 0, 0},
                                                {0, 2, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 4, 0, 0, 0, 0, 0, 0} };

@@ -14,7 +14,7 @@ public class diagramFrame extends JFrame {
     int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
     int screenX = 0, screenY = 0;
     int i;
-    int ARR_SIZE = 8;
+    int ARR_SIZE = 10;
 
     public diagramFrame() {
 
@@ -68,8 +68,50 @@ public class diagramFrame extends JFrame {
 
             test test = new test();
 
-            // Draw
+            // Draw arrow
+            g2D.setColor(Color.BLACK);
+            for (int i = 0; i < test.numberClass(); i++) {
+                 for (int j = 0; j < test.numberClass(); j++) {
+                     if (test.relationship[i][j] == 1) {
+                         if (rectLocation[i][1] > rectLocation[j][3])
+                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][1], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
+                         else if (rectLocation[i][3] < rectLocation[j][1])
+                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][3], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
+                         else if(rectLocation[i][1] <= rectLocation[j][3] && rectLocation[i][3] >= rectLocation[j][1]) {
+                             if (rectLocation[i][0] > rectLocation[j][2])
+                                 drawGeneralization(g, rectLocation[i][0], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                             else if (rectLocation[i][2] < rectLocation[j][0])
+                                 drawGeneralization(g, rectLocation[i][2], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                         }
+                     }
+                     else if (test.relationship[i][j] == 2 || test.relationship[i][j] == 3) {
+                         if (rectLocation[i][1] > rectLocation[j][3])
+                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][1], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
+                         else if (rectLocation[i][3] < rectLocation[j][1])
+                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][3], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
+                         else if(rectLocation[i][1] <= rectLocation[j][3] && rectLocation[i][3] >= rectLocation[j][1]) {
+                             if (rectLocation[i][0] > rectLocation[j][2])
+                                 drawRealizationAndImplementation(g, rectLocation[i][0], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                             else if (rectLocation[i][2] < rectLocation[j][0])
+                                 drawRealizationAndImplementation(g, rectLocation[i][2], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                         }
+                     }
+                     else if (test.relationship[i][j] == 4) {
+                         if (rectLocation[i][1] > rectLocation[j][3])
+                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][1], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
+                         else if (rectLocation[i][3] < rectLocation[j][1])
+                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][3], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
+                         else if(rectLocation[i][1] <= rectLocation[j][3] && rectLocation[i][3] >= rectLocation[j][1]) {
+                             if (rectLocation[i][0] > rectLocation[j][2])
+                                 drawAssociation(g, rectLocation[i][0], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                             else if (rectLocation[i][2] < rectLocation[j][0])
+                                 drawAssociation(g, rectLocation[i][2], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                         }
+                     }
+                 }
+            }
 
+            // Draw rect
             for (int i = 0; i < test.numberClass(); i++) {
                 // Background rect
                 g2D.setColor(new Color(255, 255, 220));
@@ -122,19 +164,25 @@ public class diagramFrame extends JFrame {
             @Override
             public void mouseDragged(MouseEvent e) {
                 test test = new test();
+
                 if(i != test.numberClass()) {
                     int deltaX = e.getX() - screenX;
                     int deltaY = e.getY() - screenY;
-                    rectLocation[i][0] += deltaX;
-                    rectLocation[i][1] += deltaY;
+                    rectLocation[i][0] += deltaX / scale;
+                    rectLocation[i][1] += deltaY / scale;
                     screenX = e.getX();
                     screenY = e.getY();
 
                     // Reupdate
-                    rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
-                    rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
+                    if (wordWidth * test.longestStringLen[i] < 100)
+                        rectLocation[i][2] = rectLocation[i][0] + 100;
+                    else
+                        rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
+                    if (test.numberClassInfo[i] == 0 || test.numberClassInfo[i] == 1)
+                        rectLocation[i][3] = rectLocation[i][1] + wordHeight * 3 + wordHeight / 2;
+                    else
+                        rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
                 }
-
             }
 
             @Override
@@ -182,7 +230,6 @@ public class diagramFrame extends JFrame {
                         JOptionPane.showMessageDialog(null, "Your image will be stored as \"Diagram.jpg\" and \"Diagram.png\"", "Message", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("./icons/ok.png"));
                     }
                 }
-
                 // Zoom in
                 else if (e.getKeyCode() == 107 || e.getKeyCode() == 46) {
                     scale += 0.1;
@@ -240,21 +287,59 @@ public class diagramFrame extends JFrame {
                 if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
         }
-        void drawGeneralization(Graphics g1, int x1, int y1, int x2, int y2) {
-            Graphics2D g = (Graphics2D) g1.create();
+
+        void drawGeneralization(Graphics g, int x1, int y1, int x2, int y2) {
+            Graphics2D g2D = (Graphics2D) g.create();
 
             double dx = x2 - x1, dy = y2 - y1;
             double angle = Math.atan2(dy, dx);
             int len = (int) Math.sqrt(dx*dx + dy*dy);
             AffineTransform at = AffineTransform.getTranslateInstance(x1, y1);
             at.concatenate(AffineTransform.getRotateInstance(angle));
-            g.transform(at);
+            g2D.transform(at);
 
             // Draw horizontal arrow starting in (0, 0)
-            g.drawLine(0, 0, len - ARR_SIZE, 0);
-            g.drawPolygon(new int[] {len, len-ARR_SIZE, len-ARR_SIZE, len},
+            g2D.drawLine(0, 0, len - ARR_SIZE, 0);
+            g2D.drawPolygon(new int[] {len, len-ARR_SIZE, len-ARR_SIZE, len},
                     new int[] {0, -ARR_SIZE, ARR_SIZE, 0}, 4);
         }
+
+        void drawRealizationAndImplementation(Graphics g, int x1, int y1, int x2, int y2) {
+            float[] dash3 = {4f, 0f, 2f};
+            Graphics2D g2D = (Graphics2D) g.create();
+
+            double dx = x2 - x1, dy = y2 - y1;
+            double angle = Math.atan2(dy, dx);
+            int len = (int) Math.sqrt(dx*dx + dy*dy);
+            AffineTransform at = AffineTransform.getTranslateInstance(x1, y1);
+            at.concatenate(AffineTransform.getRotateInstance(angle));
+            g2D.transform(at);
+
+            // Draw horizontal arrow starting in (0, 0)
+            g2D.drawPolygon(new int[] {len, len-ARR_SIZE, len-ARR_SIZE, len},
+                    new int[] {0, -ARR_SIZE, ARR_SIZE, 0}, 4);
+            BasicStroke bs3 = new BasicStroke(1, BasicStroke.CAP_BUTT,
+                    BasicStroke.JOIN_ROUND, 1.0f, dash3, 2f);
+            g2D.setStroke(bs3);
+            g2D.drawLine(0, 0, len - ARR_SIZE, 0);
+        }
+
+        void drawAssociation(Graphics g, int x1, int y1, int x2, int y2) {
+            Graphics2D g2D = (Graphics2D) g.create();
+
+            double dx = x2 - x1, dy = y2 - y1;
+            double angle = Math.atan2(dy, dx);
+            int len = (int) Math.sqrt(dx*dx + dy*dy);
+            AffineTransform at = AffineTransform.getTranslateInstance(x1, y1);
+            at.concatenate(AffineTransform.getRotateInstance(angle));
+            g2D.transform(at);
+
+            // Draw horizontal arrow starting in (0, 0)
+            g2D.drawLine(0, 0, len, 0);
+            g2D.drawLine(len - ARR_SIZE, -ARR_SIZE / (int)Math.tan(Math.toRadians(60)), len, 0);
+            g2D.drawLine(len - ARR_SIZE, ARR_SIZE / (int)Math.tan(Math.toRadians(60)), len, 0);
+        }
+
     }
 }
 
