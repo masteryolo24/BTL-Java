@@ -74,38 +74,38 @@ public class diagramFrame extends JFrame {
                  for (int j = 0; j < test.numberClass(); j++) {
                      if (test.relationship[i][j] == 1) {
                          if (rectLocation[i][1] > rectLocation[j][3])
-                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][1], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
+                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
                          else if (rectLocation[i][3] < rectLocation[j][1])
-                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][3], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
+                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
                          else if(rectLocation[i][1] <= rectLocation[j][3] && rectLocation[i][3] >= rectLocation[j][1]) {
                              if (rectLocation[i][0] > rectLocation[j][2])
-                                 drawGeneralization(g, rectLocation[i][0], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                                 drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                              else if (rectLocation[i][2] < rectLocation[j][0])
-                                 drawGeneralization(g, rectLocation[i][2], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                                 drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                          }
                      }
                      else if (test.relationship[i][j] == 2 || test.relationship[i][j] == 3) {
                          if (rectLocation[i][1] > rectLocation[j][3])
-                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][1], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
+                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
                          else if (rectLocation[i][3] < rectLocation[j][1])
-                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][3], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
+                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
                          else if(rectLocation[i][1] <= rectLocation[j][3] && rectLocation[i][3] >= rectLocation[j][1]) {
                              if (rectLocation[i][0] > rectLocation[j][2])
-                                 drawRealizationAndImplementation(g, rectLocation[i][0], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                                 drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                              else if (rectLocation[i][2] < rectLocation[j][0])
-                                 drawRealizationAndImplementation(g, rectLocation[i][2], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                                 drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                          }
                      }
                      else if (test.relationship[i][j] == 4) {
                          if (rectLocation[i][1] > rectLocation[j][3])
-                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][1], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
+                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
                          else if (rectLocation[i][3] < rectLocation[j][1])
-                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, rectLocation[i][3], (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
+                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][1]);
                          else if(rectLocation[i][1] <= rectLocation[j][3] && rectLocation[i][3] >= rectLocation[j][1]) {
                              if (rectLocation[i][0] > rectLocation[j][2])
-                                 drawAssociation(g, rectLocation[i][0], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                                 drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][2], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                              else if (rectLocation[i][2] < rectLocation[j][0])
-                                 drawAssociation(g, rectLocation[i][2], (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
+                                 drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                          }
                      }
                  }
@@ -156,7 +156,7 @@ public class diagramFrame extends JFrame {
                 screenY = e.getY();
 
                 for(i = 0; i < test.numberClass(); i++) {
-                    if(e.getX() < rectLocation[i][2] && e.getX() > rectLocation[i][0] && e.getY() < rectLocation[i][3] && e.getY() > rectLocation[i][1])
+                    if((int) (e.getX() / scale) < rectLocation[i][2] && (int) (e.getX() / scale) > rectLocation[i][0] && (e.getY() / scale) < rectLocation[i][3] && (e.getY() / scale) > rectLocation[i][1])
                         break;
                 }
             }
@@ -168,8 +168,9 @@ public class diagramFrame extends JFrame {
                 if(i != test.numberClass()) {
                     int deltaX = e.getX() - screenX;
                     int deltaY = e.getY() - screenY;
-                    rectLocation[i][0] += deltaX / scale;
-                    rectLocation[i][1] += deltaY / scale;
+
+                    rectLocation[i][0] += deltaX / (scale);
+                    rectLocation[i][1] += deltaY / (scale);
                     screenX = e.getX();
                     screenY = e.getY();
 
