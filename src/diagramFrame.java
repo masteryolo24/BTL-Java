@@ -2,6 +2,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class diagramFrame extends JFrame {
     int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
     int screenX = 0, screenY = 0;
     int i;
+    int ARR_SIZE = 8;
 
     public diagramFrame() {
 
@@ -76,7 +78,6 @@ public class diagramFrame extends JFrame {
                 g2D.setColor(Color.BLACK);
                 // Border rect
                 g2D.drawRect(rectLocation[i][0], rectLocation[i][1], rectLocation[i][2] - rectLocation[i][0], rectLocation[i][3] - rectLocation[i][1]);
-
                 // Lines separate
                 g2D.drawLine(rectLocation[i][0], rectLocation[i][1] + wordHeight + lineSpace, rectLocation[i][2], rectLocation[i][1] + wordHeight + lineSpace);
                 if(test.numberClassAttributes[i] == 1 || test.numberClassAttributes[i] == 0)
@@ -94,7 +95,6 @@ public class diagramFrame extends JFrame {
                         g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
                     temp += wordHeight;
                 }
-
             }
             repaint();
         }
@@ -239,6 +239,21 @@ public class diagramFrame extends JFrame {
                 if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] + 100;
                 if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
             }
+        }
+        void drawGeneralization(Graphics g1, int x1, int y1, int x2, int y2) {
+            Graphics2D g = (Graphics2D) g1.create();
+
+            double dx = x2 - x1, dy = y2 - y1;
+            double angle = Math.atan2(dy, dx);
+            int len = (int) Math.sqrt(dx*dx + dy*dy);
+            AffineTransform at = AffineTransform.getTranslateInstance(x1, y1);
+            at.concatenate(AffineTransform.getRotateInstance(angle));
+            g.transform(at);
+
+            // Draw horizontal arrow starting in (0, 0)
+            g.drawLine(0, 0, len - ARR_SIZE, 0);
+            g.drawPolygon(new int[] {len, len-ARR_SIZE, len-ARR_SIZE, len},
+                    new int[] {0, -ARR_SIZE, ARR_SIZE, 0}, 4);
         }
     }
 }

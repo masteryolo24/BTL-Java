@@ -8,7 +8,7 @@ public class Main {
         JFrame t = new JFrame();
         t.add(new JComponent() {
 
-            private final int ARR_SIZE = 4;
+            private final int ARR_SIZE = 10;
 
             void drawArrow(Graphics g1, int x1, int y1, int x2, int y2) {
                 Graphics2D g = (Graphics2D) g1.create();
@@ -21,7 +21,7 @@ public class Main {
                 g.transform(at);
 
                 // Draw horizontal arrow starting in (0, 0)
-                g.drawLine(0, 0, len, 0);
+                g.drawLine(0, 0, len - ARR_SIZE, 0);
                 g.drawPolygon(new int[] {len, len-ARR_SIZE, len-ARR_SIZE, len},
                         new int[] {0, -ARR_SIZE, ARR_SIZE, 0}, 4);
             }
