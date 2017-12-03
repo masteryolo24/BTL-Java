@@ -6,6 +6,7 @@ public class test {
     final int[] numberClassMethods;
     final int[] numberClassInfo;
     final int[] longestStringLen;
+    final int[][] relationship;
     final String[][] getInfo;
 
     public test() {
@@ -16,11 +17,13 @@ public class test {
         this.numberClassMethods = numberClassMethods();
         this.numberClassInfo= numberClassInfo();
         this.longestStringLen = longestStringLen();
+        this.relationship = relationship();
         this.getInfo = getInfo();
     }
     int numberClass() {
         return 10;
     }
+
     int maxNumberInfo() {
         int maxNumberInfo = 0;
         for(int i = 0; i < numberClass(); i++) {
@@ -61,6 +64,25 @@ public class test {
             }
         }
         return longestStringLen;
+    }
+    int [][] relationship() {
+
+        // 0 : no relationship
+        // 1 : generalization
+        // 2 : realization
+        // 3 : implementation
+        // 4 : association
+        int [][] relationship = new int [][] { {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 2, 0, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
+                                               {0, 0, 0, 4, 0, 0, 0, 0, 0, 0} };
+        return relationship;
     }
     String[][] getInfo() {
         String[][] getInfo = new String[maxNumberInfo()][maxNumberInfo()];
