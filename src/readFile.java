@@ -1,3 +1,5 @@
+package BaiTapLon;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,9 +20,16 @@ public class readFile {
             br = new BufferedReader(new FileReader(FILENAME));
 
             while ((currentLine = br.readLine()) != null) {
-                //bo 2 dong dau tien
                 currentLine = currentLine.trim();
+                currentLine = currentLine.replace("(", " (").replace(") ", ")").replace("{", " {").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=").replaceAll(";", " ;").replaceAll("\\s+", " ");
+
                 currentLine = currentLine.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "");
+                if(currentLine.indexOf("\"") < currentLine.indexOf("\'") || currentLine.indexOf("\'") == -1) {
+                	currentLine = f2.deleteString3(currentLine);
+                }
+                if(currentLine.indexOf("\"") > currentLine.indexOf("\'") || currentLine.indexOf("\"") == -1) {
+                	currentLine = f2.deleteString4(currentLine);
+                }
                 s = s + currentLine + " ";
             }
         } catch (IOException e) {
@@ -38,11 +47,11 @@ public class readFile {
                 ex.printStackTrace();
             }
         }
+        
         s = f2.deleteString(s);
-        s = s.replace("{", " {").replace("(", " (").replace(") ", ")").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=").replaceAll(";", " ;");
-        s = s.replaceAll("\\s+", " ").replaceAll("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)", "").trim();
-        //s = f2.deleteString3(s);
-       // s = f2.deleteString4(s);
+        //s = s.trim();
+        //s = s.replace("{", " {").replace("(", " (").replace(") ", ")").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=").replaceAll(";", " ;").replaceAll("\\s+", " ");
+
        
         return s;
     }
