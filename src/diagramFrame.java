@@ -133,8 +133,12 @@ public class diagramFrame extends JFrame {
                 for (int j = 0; j < test.numberClassInfo[i]; j++) {
                     if (j == 0)
                         g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + (rectLocation[i][2] - rectLocation[i][0] - g2D.getFontMetrics().stringWidth(test.getInfo[i][j])) / 2, rectLocation[i][1] + temp);
-                    else
+                    else {
+                        if (test.numberClassAttributes[i] == 0 && test.numberClassMethods[i] != 0 && j == 1) {
+                            temp += wordHeight;
+                        }
                         g2D.drawString(test.getInfo[i][j], rectLocation[i][0] + wordHeight / 2 - 5, rectLocation[i][1] + temp);
+                    }
                     temp += wordHeight;
                 }
             }
@@ -256,9 +260,15 @@ public class diagramFrame extends JFrame {
             // Y1
             rectLocation[0][1] = Y1;
             // X2
-            rectLocation[0][2] = rectLocation[0][0] + wordWidth * test.longestStringLen[0];
+            if (wordWidth * test.longestStringLen[0] < 100)
+                rectLocation[0][2] = rectLocation[0][0] + 100;
+            else
+                rectLocation[0][2] = rectLocation[0][0] + wordWidth * test.longestStringLen[0];
             // Y2
-            rectLocation[0][3] = rectLocation[0][1] + wordHeight * test.numberClassInfo[0] + wordHeight / 2;
+            if (test.numberClassInfo[0] == 1 || test.numberClassInfo[0] == 2)
+                rectLocation[0][3] = rectLocation[0][1] + wordHeight * 3 + wordHeight / 2;
+            else
+                rectLocation[0][3] = rectLocation[0][1] + wordHeight * test.numberClassInfo[0] + wordHeight / 2;
 
             // Set other rect location related to the one before it
             for (int i = 1; i < test.numberClass(); i++) {
@@ -278,7 +288,7 @@ public class diagramFrame extends JFrame {
                     rectLocation[i][2] = rectLocation[i][0] + 100;
                 else
                     rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
-                if (test.numberClassInfo[i] == 0 || test.numberClassInfo[i] == 1)
+                if (test.numberClassInfo[i] == 1 || test.numberClassInfo[i] == 2)
                     rectLocation[i][3] = rectLocation[i][1] + wordHeight * 3 + wordHeight / 2;
                 else
                     rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
