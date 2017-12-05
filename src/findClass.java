@@ -40,15 +40,17 @@ class findClass{
                         	i = s.indexOf(" class " , i+1);
                         }
                         if(str.indexOf(" extends ") !=-1) {
-                        	System.out.println("*" + tmp + " is a " + f.getExtend(str));
+                        	System.out.println("* " + tmp + " is a " + f.getExtend(str) + " *");
                         }
-                        f.nameMethod(str);
                         f.nameAttribute(str, s);
+                        f.nameMethod(str);
+
                         if (f.hasImplement(str)) {
                         	System.out.println("* " + tmp + " is a: ");
 	                        for (int x= 0; x<f.getImplement(str).length; x++) {
-	                        	System.out.println("   " +f.getImplement(str)[x].trim());
+	                        	System.out.print(f.getImplement(str)[x].trim() + " *");
 	                        }
+	                        System.out.println(" *");
                         }
                         break;
                     }
@@ -91,15 +93,16 @@ class findClass{
                         str = s.substring(i, tmp3-1);      
                         
                         if(str.indexOf(" extends ") !=-1) {
-                        	System.out.println("*" + tmp + " is a " + f.getExtend(str));
+                        	System.out.println("*" + tmp + " is a " + f.getExtend(str) + " *");
                         }
                         f.nameMethod(str);
                         f.nameAttribute(str, s);
                         if (f.hasImplement(str)) {
                         	System.out.println("* " + tmp + " is a: ");
 	                        for (int x= 0; x<f.getImplement(str).length; x++) {
-	                        	System.out.println("   " +f.getImplement(str)[x].trim());
+	                        	System.out.print(f.getImplement(str)[x].trim()+ " ");
 	                        }
+	                        System.out.println(" *");
                         }
                         break;
                     }
@@ -129,7 +132,7 @@ class findClass{
     			if(count==0) {
     			}
     			if(s.charAt(j) == '{') {
-                    count++;
+                    count++; 
                 }
     			if(s.charAt(j) == '}') {
     		        count--;
@@ -142,8 +145,9 @@ class findClass{
                         if (f.hasImplement(str)) {
                         	System.out.println("* " + tmp + " is a: ");
 	                        for (int x= 0; x<f.getImplement(str).length; x++) {
-	                        	System.out.println("   " +f.getImplement(str)[x].trim());
+	                        	System.out.print(f.getImplement(str)[x].trim() + " ");
 	                        }
+	                        System.out.println(" *");
                         }
                         break;
                     }
@@ -304,17 +308,17 @@ class findClass{
 			
 			int temp = s.lastIndexOf(" ", s.indexOf(name)-2);
 			if ((s.substring(temp+1 , s.indexOf(name)-1)).equals("private")) {
-				System.out.print("-");
+				System.out.print("+ -");
 			}
 			if ((s.substring(temp+1 , s.indexOf(name)-1)).equals("protected")) {
-				System.out.print("#");
+				System.out.print("+ #");
 			}
-			else System.out.print("+");
+			else System.out.print("+ +");
 			//System.out.println(s.substring(temp+1 , s.indexOf(name)-1));
 			String[] tmp = name.split(" ");
 			System.out.println(tmp[1] +": " + tmp[0]);
 			if(f.getNameClass(s1).contains(tmp[0])) {
-				System.out.println(f.getSimpleNameClass(s) + " has a " + tmp[0]);
+				System.out.println("* " + f.getSimpleNameClass(s) + " has a " + tmp[0] + " *");
 			}
 			i2 = s.indexOf(";", i2+1);
 		}
