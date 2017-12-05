@@ -3,51 +3,85 @@ package BaiTapLon;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Vector;
 
 public class readFile2 {
-    private static final Object[] String = null;
+     
+	 public String docFile(String FILENAME) {
+	        String s = "";
+	        BufferedReader br = null;
+	        FileReader fr = null;
 
-	public String docFile(String FILENAME) {
-        String s = "";
-        BufferedReader br = null;
-        FileReader fr = null;
+	        try {
 
-        try {
+	            fr = new FileReader(FILENAME);
+	            br = new BufferedReader(fr);
+	            String currentLine;
 
-            fr = new FileReader(FILENAME);
-            br = new BufferedReader(fr);
-            String currentLine;
+	            br = new BufferedReader(new FileReader(FILENAME));
 
-            br = new BufferedReader(new FileReader(FILENAME));
+	            while ((currentLine = br.readLine()) != null) {
+	               if (currentLine.charAt(0)== '*' || currentLine.charAt(0) == 'D') currentLine = "";
+	                s = s + currentLine + " ";
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
 
-            while ((currentLine = br.readLine()) != null) {
-                currentLine = currentLine.trim();
+	        } finally {
+	            try {
+	                if (br != null)
+	                    br.close();
 
-                s = s + currentLine + " ";
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+	                if (fr != null)
+	                    fr.close();
 
-        } finally {
-            try {
-                if (br != null)
-                    br.close();
+	            } catch (IOException ex) {
+	                ex.printStackTrace();
+	                
+	            }
+	            s =s.replaceAll("\\s+", " ");
+	        }
+	        
+	        return s;
+	    }
+	 
+	 public String docFile2(String FILENAME) {
+	        String s = "";
+	        BufferedReader br = null;
+	        FileReader fr = null;
 
-                if (fr != null)
-                    fr.close();
+	        try {
 
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
-        
-        //s = s.trim();
-        //s = s.replace("{", " {").replace("(", " (").replace(") ", ")").replace("\"", " \" ").replace(" ;", ";").replace(" = ", "=").replace("= ", "=").replace(" =", "=").replaceAll(";", " ;").replaceAll("\\s+", " ");
+	            fr = new FileReader(FILENAME);
+	            br = new BufferedReader(fr);
+	            String currentLine;
 
-       
-        return s;
-    }
-    
+	            br = new BufferedReader(new FileReader(FILENAME));
+
+	            while ((currentLine = br.readLine()) != null) {
+	                s = s + currentLine + " ";
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+
+	        } finally {
+	            try {
+	                if (br != null)
+	                    br.close();
+
+	                if (fr != null)
+	                    fr.close();
+
+	            } catch (IOException ex) {
+	                ex.printStackTrace();
+	                
+	            }
+	            s =s.replaceAll("\\s+", " ");
+	        }
+	        
+	        return s;
+	    }
+	 
     public int countClass(String s) {
     	int count=0;
     	int i= s.indexOf(" Class ");
@@ -63,7 +97,7 @@ public class readFile2 {
     	int k=0;
     	int i = s.indexOf(" Class ");
     		int j =s.indexOf("+Name: ", i);
-    		str =  s.substring(j, s.indexOf(" ", j+6));
+    		str =  s.substring(j+7, s.indexOf(" ", j+7));
     	return str;
     }
     
@@ -78,35 +112,115 @@ public class readFile2 {
     }
     
     public String[] getName(String s) {
-    	String[] str = null;
+    	String[] str = new  String[10000];
     	int i = s.indexOf("+ ");
     	int count =1;
     	while (i!=-1) {
-    		int j = s.indexOf("+ ", i+1);
-    		if (j==-1) {
-    			j = s.indexOf("=", i+1);
-    		}
-    		str[count] = s.substring(i+1, j-1);
+    		int j = s.indexOf(": ", i+1);
+    		str[count] = s.substring(i+2, s.indexOf(" ", j+2));
     		i = s.indexOf("+ ", i+1);
+    		count++;
     	}
     	return str;
     }
-
+    
+    public void printAll(String s) {
+    	System.out.println(s);
+    }
+    
     public String[][] getAll(String s ) {
     	readFile2 r= new readFile2();
-    	String[][] getInfo = null;
+    	String[][] getInfo = new String[10000][10000];
     	int count=0;
     	int i = s.indexOf(" Class ");
     	while (i!=-1) {
+        	//System.out.println(i);
     		int j = s.indexOf(" Class ", i+1);
-    		String tmp = s.substring(i, j-1);
+    		if(j ==-1) j = s.length();
+    		//System.out.println(j);
+    		String tmp = s.substring(i, j);
+    		//System.out.println(tmp);
+    		//System.out.println(r.getClassName(tmp));
     		getInfo[count][0] = r.getClassName(tmp);
     		for (int k = 1 ; k<=countName(s); k++) {
-    			getInfo[count][k] = r.getName(tmp+9)[k];
+    			getInfo[count][k] = r.getName(tmp)[k];
     		}
     		i = s.indexOf(" Class ", i+1);
     		count++;
     	}
     	return getInfo;
     }
+    
+    public int countMethod(String s) {
+    	int count =0;
+    	for (int i=0; i<s.length(); i++) {
+    		if (s.charAt(i) == '(') count++;
+    	}
+    	return count;
+    }
+    
+    
+    public int[] numberMethod(String s) {
+    	int[] count1 = new int[10000];
+    	readFile2 r= new readFile2();
+    	int count=0;
+    	int i = s.indexOf(" Class ");
+    	while (i!=-1) {
+    		int j = s.indexOf(" Class ", i+1);
+    		if(j ==-1) j = s.length();
+    		String tmp = s.substring(i, j);
+    		//System.out.println(r.countName(tmp));
+    		count1[count] = r.countMethod(tmp);
+    		i = s.indexOf(" Class ", i+1);
+    		count++;
+    	}
+    	return count1;
+    }
+    
+    public int[] numberAttribute(String s) {
+    	int[] count1 = new int[10000];
+    	readFile2 r= new readFile2();
+    	int count=0;
+    	int i = s.indexOf(" Class ");
+    	while (i!=-1) {
+    		int j = s.indexOf(" Class ", i+1);
+    		if(j ==-1) j = s.length();
+    		String tmp = s.substring(i, j);
+    		//System.out.println(r.countName(tmp));
+    		count1[count] = r.countName(tmp) - r.countMethod(tmp);
+    		i = s.indexOf(" Class ", i+1);
+    		count++;
+    	}
+    	return count1;
+    }
+    
+    
+    public Vector<String> getLocationClass(String s){
+    	Vector<String> v = new Vector<String>(10,2);
+    	readFile2 r = new readFile2();
+    	int count = 0;
+    	int i = s.indexOf(" Class ");
+    	while(i!=-1) {
+    		int j = s.indexOf(" Class ", i+1);
+    		if(j==-1) j =s.length();
+    		String tmp = s.substring(i,j);
+    		v.add(count, r.getClassName(tmp));
+    		i = s.indexOf(" Class ", i+1);
+    		count++;
+    	}
+    	return v;
+    }
+    
+    public int[][] getRelationship(String s){
+    	readFile2 r= new readFile2();
+    	int count = r.countClass(s);
+    	int[][] relationship = new int[count][count];
+    	for(int i=0; i<count; i++) {
+    		for(int j=0;j <count; j++) {
+    			relationship[i][j] = 0;
+    		}
+    	}
+    	return relationship;
+    }
+    
 }
