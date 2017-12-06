@@ -84,7 +84,7 @@ public class diagramFrame extends JFrame {
                                 drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                         }
                     }
-                    else if (test.relationship[i][j] == 2 || test.relationship[i][j] == 3) {
+                    else if (test.relationship[i][j] == 2) {
                         if (rectLocation[i][1] > rectLocation[j][3])
                             drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
                         else if (rectLocation[i][3] < rectLocation[j][1])
@@ -96,7 +96,7 @@ public class diagramFrame extends JFrame {
                                 drawRealizationAndImplementation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, rectLocation[j][0], (rectLocation[j][1] + rectLocation[j][3]) / 2);
                         }
                     }
-                    else if (test.relationship[i][j] == 4) {
+                    else if (test.relationship[i][j] == 3) {
                         if (rectLocation[i][1] > rectLocation[j][3])
                             drawAssociation(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
                         else if (rectLocation[i][3] < rectLocation[j][1])
