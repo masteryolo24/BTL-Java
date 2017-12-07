@@ -187,6 +187,8 @@ public class readFile2 {
     		if(j ==-1) j = s.length();
     		String tmp = s.substring(i, j);
     		//System.out.println(r.countName(tmp));
+    		//System.out.println(r.countName(tmp));
+    		//System.out.println(r.countMethod(tmp));
     		count1[count] = r.countName(tmp) - r.countMethod(tmp);
     		i = s.indexOf(" Class ", i+1);
     		count++;
@@ -220,7 +222,104 @@ public class readFile2 {
     			relationship[i][j] = 0;
     		}
     	}
+    	int l =s.indexOf(" Class ");
+    	while (l!=-1) {
+    		int j2 = s.indexOf(" Class ", l+1);
+    		if(j2 ==-1) j2 = s.length();
+    		String tmp = s.substring(l, j2);
+    		int k = tmp.indexOf("* ");
+    		int x = tmp.indexOf("^ ");
+    		int z = tmp.indexOf("$ ");
+    		while(k!=-1) {
+    			//System.out.println(tmp);
+    			//System.out.println(k);
+    			int k2 = tmp.indexOf("*", k+1);
+    			String s2 = tmp.substring(k+2, tmp.indexOf(" *",k));
+    			//System.out.println(s2);
+    			String temp[] = s2.split(" ");
+    			//System.out.println(temp[3]);
+    			//System.out.println(r.getLocationClass(s).indexOf(temp[3]));
+    			relationship[r.getLocationClass(s).indexOf(temp[0])][r.getLocationClass(s).indexOf(temp[3])] =1;
+    			k = tmp.indexOf("* ", k2+1);
+    		}
+    		
+    		while(x!=-1) {
+    			//System.out.println(tmp);
+    			//System.out.println(k);
+    			int x2 = tmp.indexOf("^", x+1);
+    			String s2 = tmp.substring(x+2, tmp.indexOf(" ^",x));
+    			//System.out.println(s2);
+    			String temp[] = s2.split(" ");
+    			//System.out.println(temp[3]);
+    			//System.out.println(r.getLocationClass(s).indexOf(temp[3]));
+    			relationship[r.getLocationClass(s).indexOf(temp[0])][r.getLocationClass(s).indexOf(temp[3])] =4;
+    			x = tmp.indexOf("^ ", x2+1);
+    		}
+    		
+    		while(z!=-1) {
+    			//System.out.println(tmp);
+    			//System.out.println(k);
+    			int z2 = tmp.indexOf("$", z+1);
+    			String s2 = tmp.substring(z+2, tmp.indexOf(" $",z));
+    			//System.out.println(s2);
+    			String temp[] = s2.split(" ");
+    			String temp2[] = temp[3].split(",");
+    			for(String w:temp2) {
+    			//System.out.println(temp[3]);
+    			//System.out.println(r.getLocationClass(s).indexOf(temp[3]));
+    			relationship[r.getLocationClass(s).indexOf(temp[0])][r.getLocationClass(s).indexOf(w)] =2;
+    			}
+    			z = tmp.indexOf("$ ", z2+1);
+    		}
+    		
+    		l = s.indexOf(" Class ", l+1);
+    		
+    		
+    		
+    	}
+    	//System.out.println(relationship[2][1]);
+    	
+    	
     	return relationship;
+    }
+    
+    public void test(String s){
+    	readFile2 r= new readFile2();
+    	int count = r.countClass(s);
+    	int[][] relationship = new int[count][count];
+    	for(int i=0; i<count; i++) {
+    		for(int j=0;j <count; j++) {
+    			relationship[i][j] = 0;
+    		}
+    	}
+    	int l =s.indexOf(" Class ");
+    	while (l!=-1) {
+    		int j2 = s.indexOf(" Class ", l+1);
+    		if(j2 ==-1) j2 = s.length();
+    		String tmp = s.substring(l, j2);
+    		//System.out.println(tmp);
+    		int k = tmp.indexOf("$ ");
+    		//System.out.println(k);
+    		while(k!=-1) {
+    			//System.out.println(tmp);
+    			//System.out.println(k);
+    			int k2 = tmp.indexOf(" $", k+1);
+    			String s2 = tmp.substring(k+2, k2);
+    			//System.out.println(s2);
+    			String temp[] = s2.split(" ");
+    			System.out.println(temp[3]);
+    			String temp2[] = temp[3].split(",");
+    			for(String w:temp2) {
+    				System.out.println(w);
+    			}
+    			//System.out.println(r.getLocationClass(s).indexOf(temp[3]));
+    			//relationship[r.getLocationClass(s).indexOf(temp[0])][r.getLocationClass(s).indexOf(temp[3])] =2;
+    			k = tmp.indexOf("* ", k2+1);
+    		}
+    		l = s.indexOf(" Class ", l+1);
+    	}
+    	System.out.println(relationship[2][1]);
+    	
     }
     
 }
