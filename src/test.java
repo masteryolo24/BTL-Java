@@ -68,19 +68,18 @@ public class test {
     int [][] relationship() {
         // 0 : no relationship
         // 1 : generalization
-        // 2 : realization
-        // 3 : implementation
-        // 4 : association
+        // 2 : realization / implementation
+        // 3 : association
         int [][] relationship = new int [][] { {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                                               {1, 2, 3, 4, 0, 0, 0, 0, 0, 0},
+                                               {1, 2, 3, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 2, 0, 0, 0, 0, 0, 0, 0, 0},
                                                {0, 0, 3, 0, 0, 0, 0, 0, 0, 0},
-                                               {0, 0, 0, 4, 0, 0, 0, 0, 0, 0} };
+                                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0} };
         return relationship;
     }
     String[][] getInfo() {
