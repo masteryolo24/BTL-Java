@@ -1,3 +1,4 @@
+package BaiTapLon;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +10,7 @@ import java.io.IOException;
 import java.awt.event.*;
 
 public class diagramFrame extends JFrame {
+	final test test;
     diagramPanel diagram = new diagramPanel();
     int X1 = 100, Y1 = 100;
     int fontSize = 18, wordHeight = 24, wordWidth = 10, lineSpace = 6, boxSpace = 50;
@@ -17,9 +19,9 @@ public class diagramFrame extends JFrame {
     int ARR_SIZE = 10;
 
     public diagramFrame() {
-
         // Size and name of JFrame
         super("Java SE Project Reader");
+    	test = new test();
         setLayout(new BorderLayout());
         setPreferredSize(new Dimension(1280, 720));
         diagram.updateLocation();
@@ -66,12 +68,12 @@ public class diagramFrame extends JFrame {
             g2D.setColor(new Color(238, 238, 238));
             g2D.fillRect(0, 0, 1280, 720);
 
-            test test = new test();
-
+            //test test = new test();
+            
             // Draw arrow
             g2D.setColor(Color.BLACK);
-            for (int i = 0; i < test.numberClass(); i++) {
-                for (int j = 0; j < test.numberClass(); j++) {
+            for (int i = 0; i < test.numberClass; i++) {
+                for (int j = 0; j < test.numberClass; j++) {
                     if (test.relationship[i][j] == 1) {
                         if (rectLocation[i][1] > rectLocation[j][3])
                             drawGeneralization(g, (rectLocation[i][2] + rectLocation[i][0]) / 2, (rectLocation[i][1] + rectLocation[i][3]) / 2, (rectLocation[j][2] + rectLocation[j][0]) / 2, rectLocation[j][3]);
@@ -112,7 +114,7 @@ public class diagramFrame extends JFrame {
             }
 
             // Draw rect
-            for (int i = 0; i < test.numberClass(); i++) {
+            for (int i = 0; i < test.numberClass; i++) {
                 // Background rect
                 g2D.setColor(new Color(255, 255, 220));
                 g2D.fillRect(rectLocation[i][0], rectLocation[i][1], rectLocation[i][2] - rectLocation[i][0], rectLocation[i][3] - rectLocation[i][1]);
@@ -155,11 +157,11 @@ public class diagramFrame extends JFrame {
         class mouseHandler extends MouseMotionAdapter implements MouseMotionListener, MouseListener{
             @Override
             public void mousePressed(MouseEvent e) {
-                test test = new test();
+                //test test = new test();
                 screenX = e.getX();
                 screenY = e.getY();
 
-                for(i = 0; i < test.numberClass(); i++) {
+                for(i = 0; i < test.numberClass; i++) {
                     if((int) (e.getX() / scale) < rectLocation[i][2] && (int) (e.getX() / scale) > rectLocation[i][0] && (e.getY() / scale) < rectLocation[i][3] && (e.getY() / scale) > rectLocation[i][1])
                         break;
                 }
@@ -167,9 +169,9 @@ public class diagramFrame extends JFrame {
 
             @Override
             public void mouseDragged(MouseEvent e) {
-                test test = new test();
+                //test test = new test();
 
-                if(i != test.numberClass()) {
+                if(i != test.numberClass) {
                     int deltaX = e.getX() - screenX;
                     int deltaY = e.getY() - screenY;
 
@@ -179,15 +181,24 @@ public class diagramFrame extends JFrame {
                     screenY = e.getY();
 
                     // Reupdate
+                    // X2
                     if (wordWidth * test.longestStringLen[i] < 100)
                         rectLocation[i][2] = rectLocation[i][0] + 100;
                     else
                         rectLocation[i][2] = rectLocation[i][0] + wordWidth * test.longestStringLen[i];
-                    if (test.numberClassInfo[i] == 0 || test.numberClassInfo[i] == 1)
+
+                    // Y2
+                    if (test.numberClassInfo[i] == 1 || test.numberClassInfo[i] == 2)
                         rectLocation[i][3] = rectLocation[i][1] + wordHeight * 3 + wordHeight / 2;
+                    else if (test.numberClassInfo[i] > 2 && test.numberClassAttributes[i] == 0)
+                        rectLocation[i][3] = rectLocation[i][1] + wordHeight * (test.numberClassInfo[i] + 1) + wordHeight / 2;
                     else
                         rectLocation[i][3] = rectLocation[i][1] + wordHeight * test.numberClassInfo[i] + wordHeight / 2;
-                }
+                    
+                    // Find max X, max Y
+                    if(rectLocation[i][2] + 100 > width) width = rectLocation[i][2] + 100;
+                    if(rectLocation[i][3] + 100 > height) height = rectLocation[i][3] +100;
+                }                
             }
 
             @Override
@@ -252,8 +263,8 @@ public class diagramFrame extends JFrame {
         }
 
         void updateLocation() {
-            test test = new test();
-            rectLocation = new int[test.numberClass()][4];
+            //test test = new test();
+            rectLocation = new int[test.numberClass][4];
             // Set location for the first rect
             // X1
             rectLocation[0][0] = X1;
@@ -273,12 +284,12 @@ public class diagramFrame extends JFrame {
                 rectLocation[0][3] = rectLocation[0][1] + wordHeight * test.numberClassInfo[0] + wordHeight / 2;
 
             // Set other rect location related to the one before it
-            for (int i = 1; i < test.numberClass(); i++) {
+            for (int i = 1; i < test.numberClass; i++) {
 
                 // X1, y1
-                if (i == test.numberClass() / 2 - 1) {
+                if (i == test.numberClass / 2) {
                     int maxHeightLine1 = 0;
-                    for(int j = 0; j < test.numberClass() / 2 - 2; j++) {
+                    for(int j = 0; j < test.numberClass / 2 - 2; j++) {
                         if(rectLocation[j][3] > maxHeightLine1)
                             maxHeightLine1 = rectLocation[j][3];
                     }
