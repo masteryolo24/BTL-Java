@@ -3,6 +3,7 @@ package BaiTapLon;
 import java.util.*;
 
 class findClass{
+	//in ra cac thanh phan trong 1 class
     public void nameClass (String s) {
     	int count =0, tmp3;
     	String str;
@@ -46,11 +47,12 @@ class findClass{
                         f.nameMethod(str);
 
                         if (f.hasImplement(str)) {
-                        	System.out.println("* " + tmp + " is a: ");
+                        	System.out.print("$ " + tmp + " is a: ");
 	                        for (int x= 0; x<f.getImplement(str).length; x++) {
-	                        	System.out.print(f.getImplement(str)[x].trim() + " *");
+	                        	System.out.print(f.getImplement(str)[x].trim());
+	                        	if (x<f.getImplement(str).length-1) System.out.print(",");
 	                        }
-	                        System.out.println(" *");
+	                        System.out.println(" $");
                         }
                         break;
                     }
@@ -113,6 +115,7 @@ class findClass{
         }
     }
     
+    //in ra cac thanh phan trong 1 Interface
     public void nameInterface (String s) {
     	int count =0, tmp3;
     	String str;
@@ -157,6 +160,7 @@ class findClass{
         }
     }
     
+    //Xoa nhung ki tu nam ben trong dau nhay kep
     public String deleteString3 (String s) {
     	String tmp, tmp2 = s;
     	int i = s.indexOf("\""), j;
@@ -174,6 +178,7 @@ class findClass{
 		return tmp2;
     }
     
+    //Xoa nhung ki tu nam ben trong dau nhay don
     public String deleteString4 (String s) {
     	String tmp, tmp2 = s;
     	int i = s.indexOf("\'"), j;
@@ -191,7 +196,7 @@ class findClass{
 		return tmp2;
     }
     
-    
+    //lay ten cua 1 class
     public String getSimpleNameClass(String s) {
     	int i1 = s.indexOf(" class ");
         int i2 = s.indexOf(" ", i1+7);
@@ -199,6 +204,7 @@ class findClass{
         return tmp;
     }
     
+    //luu ten cua cac class vao trong 1 Vector
     public Vector<String> getNameClass(String s) {
     	Vector<String> v = new Vector<String>(10,2);
     	int i1 = s.indexOf(" class ");
@@ -213,7 +219,7 @@ class findClass{
         }
     	return v;
     }
-
+    //lay ten cua package
     public String namePackage(String s) {
         int i3= s.indexOf(" package ");
         String s2 = new String();
@@ -224,6 +230,7 @@ class findClass{
         return s2;
     }
     
+    //Xoa nhung phan nam trong dau ngoac nhon cua 1 class
 	public String deleteString(String s) {
 		findClass f = new findClass();
 		String s1= s;
@@ -252,7 +259,7 @@ class findClass{
 		return s1;
 	}
 	
-	
+		//Xoa nhung phan nam trong dau ngoac nhon cua cac ham trong 1 class
 	   public String deleteString2(String s) {
 			String s1= s;
 			int i1 = s.indexOf("{");
@@ -279,23 +286,15 @@ class findClass{
 	        }
 			return s1;
 	   }	   
-	   
+	  
+	//in ra ten cua cac phuong thuc   
     public void nameAttribute(String s, String s1) {
 		String name = null;
 		findClass f= new findClass();
 		int i2 = s.indexOf(";");
 		if (i2==-1)System.out.println("Don't have Attribute!");
-		//else System.out.println("Attribute:");
 		while (i2!=-1) {
-			int j =  s.lastIndexOf("new ", i2);
-			//int k = s.lastIndexOf("=", i2);
-			int l = s.lastIndexOf(";", i2-1);
-			//System.out.println(j);
-			//System.out.println(k);
-			//System.out.println(l);
-
 			if(s.charAt(i2-2) == ')' && s.charAt(s.lastIndexOf(" " , s.lastIndexOf(" ", s.lastIndexOf("(", i2))-1)-4) == '=') {
-				//System.out.print(s.charAt(s.lastIndexOf("=new" , s.lastIndexOf(" ", s.lastIndexOf(" ", i2)-1)-1)));
 				int k = s.lastIndexOf("=", i2);
 				int k2 = s.lastIndexOf(" ", s.lastIndexOf(" ", k)-1);
 				name = s.substring(k2+1, k);
@@ -310,15 +309,18 @@ class findClass{
 			if ((s.substring(temp+1 , s.indexOf(name)-1)).equals("private")) {
 				System.out.print("+ -");
 			}
-			if ((s.substring(temp+1 , s.indexOf(name)-1)).equals("protected")) {
+			else if ((s.substring(temp+1 , s.indexOf(name)-1)).equals("protected")) {
 				System.out.print("+ #");
 			}
 			else System.out.print("+ +");
-			//System.out.println(s.substring(temp+1 , s.indexOf(name)-1));
 			String[] tmp = name.split(" ");
-			System.out.println(tmp[1] +": " + tmp[0]);
+			if(tmp[1].indexOf("=") != -1) {
+				String[] tmp2 = tmp[1].split("=");
+				System.out.println(tmp2[0] +": "+ tmp[0]);
+			}
+			else System.out.println(tmp[1] +": " + tmp[0]);
 			if(f.getNameClass(s1).contains(tmp[0])) {
-				System.out.println("* " + f.getSimpleNameClass(s) + " has a " + tmp[0] + " *");
+				System.out.println("^ " + f.getSimpleNameClass(s) + " has a " + tmp[0] + " ^");
 			}
 			i2 = s.indexOf(";", i2+1);
 		}
@@ -343,19 +345,16 @@ class findClass{
     public String[] getImplement(String s) {
     	String tmp;
     	int i = s.indexOf(" implements ");
-    	//if (i!=-1) {
 	    	int i2 = s.indexOf("{", i);
 	    	tmp = s.substring(i+12, i2);	    	
 	    	String[] temp = tmp.split(",");
 	    	return temp;
-    	//}
-    	//return null;
     }
     
+    //in ra ten cua cac ham
 	public void nameMethod(String s) {
 		int i = s.indexOf("(");
 		if(i==-1) System.out.println("Don't have Method!");
-		//else System.out.println("Method: ");
 		while (i!=-1) {
 			int tmp2 = s.lastIndexOf(" ", i);
 			int tmp3 = s.lastIndexOf(" ", tmp2-1);
@@ -365,7 +364,6 @@ class findClass{
 			int tmp6 = s.lastIndexOf(" " , tmp5-1);
 			if(s.charAt((s.indexOf(")", i) +2)) == ';') {
 				if ((s.substring(tmp6+1, tmp5)).equals("abstract")){
-					//System.out.println("Hello World");
 					if((s.substring(s.lastIndexOf(" ", tmp6-1)+1, tmp6)).equals("private")) {
 						System.out.print("+ -");
 						System.out.println(s.substring(tmp3+1, tmp7-1) + ": " +s.substring(tmp5+1, tmp3) + "  (Abstract Method)");
@@ -406,7 +404,12 @@ class findClass{
 					}
 					else System.out.print("+ +");
 				}
-				System.out.println(s.substring(tmp3+1, tmp4-1) + ": " +s.substring(tmp5+1, tmp3));
+				String temp = s.substring(tmp3+1, tmp4-1) + ": " +s.substring(tmp5+1, tmp3);
+				if(temp.indexOf("throws") !=-1) {
+					int l = temp.indexOf(":");
+					temp  =temp.replaceAll(temp.substring(temp.indexOf("throws"), l), "");
+				}
+				System.out.println(temp);
 				i = s.indexOf("(", tmp4);
 			}
 		}
